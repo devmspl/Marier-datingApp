@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25A-cy-2IQ">
+                    <rect key="frame" x="20" y="172" width="350" height="500"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get mingle Gold" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENI-Dd-TlV">
+                            <rect key="frame" x="86" y="15" width="178" height="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                            <color key="textColor" name="crossColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldLike" translatesAutoresizingMaskIntoConstraints="NO" id="QQp-vg-SEW">
+                            <rect key="frame" x="133.66666666666666" y="55" width="83" height="83"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unlimited Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfV-SZ-eOM">
+                            <rect key="frame" x="98.666666666666671" y="153" width="152.66666666666663" height="25.333333333333343"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send as many likes as you want" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esT-9N-FLL">
+                            <rect key="frame" x="55.333333333333329" y="188.33333333333331" width="239.66666666666669" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="hNN-eG-Ffn">
+                            <rect key="frame" x="20" y="224.33333333333331" width="310" height="26"/>
+                        </pageControl>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="r8I-zE-ohQ">
+                            <rect key="frame" x="0.0" y="260.33333333333331" width="350" height="150"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="qWn-U0-TgU"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TwG-AU-HW5">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGrayColor"/>
+                    <constraints>
+                        <constraint firstItem="ENI-Dd-TlV" firstAttribute="top" secondItem="25A-cy-2IQ" secondAttribute="top" constant="15" id="1YZ-IT-Nbw"/>
+                        <constraint firstItem="hNN-eG-Ffn" firstAttribute="top" secondItem="esT-9N-FLL" secondAttribute="bottom" constant="15" id="33G-wK-kTG"/>
+                        <constraint firstItem="hfV-SZ-eOM" firstAttribute="centerX" secondItem="25A-cy-2IQ" secondAttribute="centerX" id="AhF-gH-ae7"/>
+                        <constraint firstItem="r8I-zE-ohQ" firstAttribute="leading" secondItem="25A-cy-2IQ" secondAttribute="leading" id="I0E-Io-Qiq"/>
+                        <constraint firstItem="esT-9N-FLL" firstAttribute="centerX" secondItem="25A-cy-2IQ" secondAttribute="centerX" id="JM2-ZI-Jwr"/>
+                        <constraint firstItem="ENI-Dd-TlV" firstAttribute="centerX" secondItem="25A-cy-2IQ" secondAttribute="centerX" id="JuB-33-KjY"/>
+                        <constraint firstAttribute="trailing" secondItem="r8I-zE-ohQ" secondAttribute="trailing" id="Yfh-AI-Mhe"/>
+                        <constraint firstAttribute="trailing" secondItem="hNN-eG-Ffn" secondAttribute="trailing" constant="20" id="ZYd-0h-PdL"/>
+                        <constraint firstItem="esT-9N-FLL" firstAttribute="top" secondItem="hfV-SZ-eOM" secondAttribute="bottom" constant="10" id="aMv-GP-3Lo"/>
+                        <constraint firstItem="r8I-zE-ohQ" firstAttribute="top" secondItem="hNN-eG-Ffn" secondAttribute="bottom" constant="10" id="eWD-mh-jo0"/>
+                        <constraint firstItem="hNN-eG-Ffn" firstAttribute="centerX" secondItem="25A-cy-2IQ" secondAttribute="centerX" id="giH-uD-Snr"/>
+                        <constraint firstAttribute="height" constant="500" id="iLa-Ba-LVV"/>
+                        <constraint firstItem="hNN-eG-Ffn" firstAttribute="leading" secondItem="25A-cy-2IQ" secondAttribute="leading" constant="20" id="r0J-yp-dRi"/>
+                        <constraint firstItem="hfV-SZ-eOM" firstAttribute="top" secondItem="QQp-vg-SEW" secondAttribute="bottom" constant="15" id="rHV-au-0Sv"/>
+                        <constraint firstItem="QQp-vg-SEW" firstAttribute="top" secondItem="ENI-Dd-TlV" secondAttribute="bottom" constant="10" id="vQA-BV-vP7"/>
+                        <constraint firstItem="QQp-vg-SEW" firstAttribute="centerX" secondItem="25A-cy-2IQ" secondAttribute="centerX" id="vUN-2U-ts2"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.15298150510204081" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="25A-cy-2IQ" secondAttribute="trailing" constant="20" id="Ld7-i4-Ns6"/>
+                <constraint firstItem="25A-cy-2IQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TU4-zP-Ldm"/>
+                <constraint firstItem="25A-cy-2IQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kiR-5j-ar9"/>
+                <constraint firstItem="25A-cy-2IQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="tP2-2c-4pz"/>
+            </constraints>
+            <point key="canvasLocation" x="35" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="goldLike" width="83" height="83"/>
+        <namedColor name="crossColor">
+            <color red="0.9649999737739563" green="0.27500000596046448" blue="0.24300000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
