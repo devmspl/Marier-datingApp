@@ -14,13 +14,24 @@ class SexualOrientationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadData()
         // Do any additional setup after loading the view.
     }
+    
     //MARK: - Private Function//
-    private lazy var viewModel: SexualOrientationVM = {
+     lazy var viewModel: SexualOrientationVM = {
         return SexualOrientationVM()
     }()
+    
+    private func loadData(){
+        viewModel.getOrientationData {[self] isSuccess, error in
+            if !(isSuccess){
+                self.alert(message: error)
+            }else{
+                orientationTable.reloadData()
+            }
+        }
+    }
     //MARK: - actions///
     @IBAction func onBackTap(_ sender: UIButton){
         self.poptoViewController()
@@ -29,23 +40,18 @@ class SexualOrientationVC: UIViewController {
         
     }
     @IBAction func onContinueTapped(_ sender: UIButton){
-        let vc = storyBoards.Main.instantiateViewController(withIdentifier: "AddInterestVC") as! AddInterestVC
-        self.pushVC(controller: vc)
+        
+            viewModel.apiCall(orientations: viewModel.selectedInterests) { isSuccess, error in
+                if isSuccess{
+                    let vc = storyBoards.Main.instantiateViewController(withIdentifier: "AddInterestVC") as! AddInterestVC
+                    self.pushVC(controller: vc)
+                }else{
+                    self.alert(message: error)
+                }
+            }
+        }
+    }
+    
 
-    }
     
-}
 
-extension SexualOrientationVC: UITableViewDelegate,UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.dataArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = orientationTable.dequeueReusableCell(withIdentifier: "cell") as! OreintationCell
-        cell.orientationLabel.text = viewModel.dataArray[indexPath.row]
-        return cell
-    }
-    
-    
-}

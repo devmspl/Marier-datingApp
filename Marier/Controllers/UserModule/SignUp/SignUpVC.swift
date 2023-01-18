@@ -19,7 +19,12 @@ class SignUpVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+    //MARK: - private functions
+    private lazy var viewModel: SignUpVM = {
+        return SignUpVM()
+    }()
+
+//MARK: - ibaction
     @IBAction func backTap(_ sender: UIButton){
         self.poptoViewController()
     }
@@ -39,7 +44,18 @@ class SignUpVC: UIViewController {
         
     }
     @IBAction func signUp(_ sender: UIButton){
-        let vc = storyBoards.Main.instantiateViewController(withIdentifier: "OTPVC") as! OTPVC
-        self.pushVC(controller: vc)
+        
+        let request = SignUpModel(name: fullName.text ?? "", phoneNumber: phoneNumber.text ?? "", sex: gender.text ?? "", dob: dateOfBirth.text ?? "")
+        
+            viewModel.apiCall(requestData: request, completion: { isSuccess, error in
+               if isSuccess{
+                   let vc = storyBoards.Main.instantiateViewController(withIdentifier: "OTPVC") as! OTPVC
+                   self.pushVC(controller: vc)
+               }else{
+                   self.alert(message: error)
+               }
+           })
+        }
+       
     }
-}
+

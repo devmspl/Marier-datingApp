@@ -6,21 +6,29 @@
 //
 
 import UIKit
+import OTPTextField
 
 class OTPVC: UIViewController {
+    
+    
 
     @IBOutlet weak var otpView: UIView!
+ 
     @IBOutlet weak var resendBtn: UIButton!
-    @IBOutlet weak var textField1: UIView!
-    @IBOutlet weak var textField2: UIView!
-    @IBOutlet weak var textField3: UIView!
-    @IBOutlet weak var textField4: UIView!
+    @IBOutlet weak var otpTextField: OTPTextField!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
         // Do any additional setup after loading the view.
     }
+    
+//MARK: - private functions
+    private lazy var viewModel: OtpVM = {
+        return OtpVM()
+    }()
+    ///////////
     
     @IBAction func onBackTap(_ sender: UIButton){
         self.poptoViewController()
@@ -29,7 +37,14 @@ class OTPVC: UIViewController {
         
     }
     @IBAction func onContinueTap(_ sender: UIButton){
-        let vc = storyBoards.Main.instantiateViewController(withIdentifier: "SexualOrientationVC") as! SexualOrientationVC
-        self.pushVC(controller: vc)
+        
+            viewModel.apiCall(otp: otpTextField.text!) { isSuccess, error in
+                if isSuccess{
+                    let vc = storyBoards.Main.instantiateViewController(withIdentifier: "SexualOrientationVC") as! SexualOrientationVC
+                    self.pushVC(controller: vc)
+                }else{
+                    self.alert(message: error)
+                }
+            }
     }
 }

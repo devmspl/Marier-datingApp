@@ -17,25 +17,6 @@ struct storyBoards {
     static let TabBar = UIStoryboard(name: "TabBar", bundle: nil)
 }
 
-//MARK: - uiviewcontroller extension //////
-extension UIViewController{
-    //pop
-     func pushVC(controller:UIViewController){
-        self.navigationController?.pushViewController(controller, animated: true)
-     }
-    func poptoViewController(){
-       self.navigationController?.popViewController(animated: true)
-    }
-    
-    func embed(_ viewController:UIViewController, inParent controller:UIViewController, inView view:UIView){
-       viewController.willMove(toParent: controller)
-       viewController.view.frame = view.bounds
-       view.addSubview(viewController.view)
-       controller.addChild(viewController)
-       viewController.didMove(toParent: controller)
-    }
-}
-
 //MARK: - purpleButton class//////
 class PurpleButton: UIButton{
     override init(frame: CGRect) {
@@ -131,4 +112,30 @@ func currentTime() -> String {
     dateFormatter.amSymbol = "AM"
     dateFormatter.pmSymbol = "PM"
     return dateFormatter.string(from: date)
+}
+
+//MARK: - user id and tokens
+    func getUserToken() -> String {
+        let token = UserDefaults.standard.value(forKey: "token") as? String ?? ""
+        return token
+    }
+    
+    func getUserId()->String{
+        let userId = UserDefaults.standard.value(forKey: "id") as? String ?? ""
+        return userId
+    }
+//MARK: - BackGroundThread
+extension DispatchQueue {
+
+    static func background(delay: Double = 0.0, background: (()->Void)? = nil, completion: (() -> Void)? = nil) {
+        DispatchQueue.global(qos: .background).async {
+            background?()
+            if let completion = completion {
+                DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+                    completion()
+                })
+            }
+        }
+    }
+
 }

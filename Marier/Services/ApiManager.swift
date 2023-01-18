@@ -6,9 +6,8 @@
 //
 
 import Foundation
-
-import Foundation
-
+import Alamofire
+import KRProgressHUD
 
 enum RequestMethod: String{
     case get
@@ -17,64 +16,77 @@ enum RequestMethod: String{
     case put
 }
 
-struct ApiManager
+class ApiManager
 {
-    func hitAPI<T:Codable>(requestUrl: URL, httpMethod: RequestMethod, requestBody: Data?, resultType: T.Type?, completionHandler:@escaping(_ result: T?, _ statusCode: Int, _ isSuccess: Bool, _ error: Error?)-> Void)
-    {
-//        ProgressHUD.show()
-        var urlRequest = URLRequest(url: requestUrl)
-        urlRequest.httpMethod = httpMethod.rawValue
-        urlRequest.httpBody = requestBody
-        urlRequest.allHTTPHeaderFields = sendheaders()
-        URLSession.shared.dataTask(with: urlRequest) { (data, httpUrlResponse, error) in
-            guard let httpResponse = httpUrlResponse as? HTTPURLResponse else {return}
-            let statusCode = httpResponse.statusCode
-                do {
-                    let response = try JSONDecoder().decode(T.self, from: data!)
-                    print(response)
-                    if (200...299).contains(statusCode){
-                        _=completionHandler(response,statusCode,true,nil)
+    ///
+    ///
+    public static let shared = ApiManager()
+    ///
+    ///
+    ///
+    func getDataApi<T:Codable>(requestUrl: String,httpMethod: HTTPMethod,resultType:T.Type,completion: @escaping(_ result: T?,_ statusCode: Int,_ isSuccess: Bool,_ error: String)->()){
+        KRProgressHUD.show()
+        if ReachabilityNetwork.isConnectedToNetwork(){
+            AF.request(requestUrl,method: httpMethod,headers: sendheader()).response{
+                response in
+                switch response.result{
+                    
+                case .success(let data):do{
+                     let json =  try? JSONDecoder().decode(T.self, from: data!)
+                    let res = try! JSONSerialization.jsonObject(with: data!,options: .mutableContainers) as! [String:Any]
+                    let status = response.response?.statusCode
+                    if status == 200{
+                        completion(json,status!,true,"")
                     }else{
-                        _=completionHandler(response,statusCode,false,error)
+                        let json = try! JSONSerialization.jsonObject(with: data!,options: .mutableContainers) as! [String:Any]
+                        let errorMessage = json["message"] as! String
+                        completion(nil,status!,false,errorMessage)
                     }
-//                    ProgressHUD.hide()
                 }
-                catch let error {
-//                    ProgressHUD.hide()
-                    _=completionHandler(nil,statusCode,false,error)
-                    debugPrint(error)
+                case .failure(let error):do{
+                    completion(nil,400,false,error.localizedDescription)
                 }
-        }.resume()
+                }
+            }
+            
+        }
     }
-
-        func hitAPI(requestUrl: URL, httpMethod: RequestMethod, requestBody: Data?, completionHandler:@escaping(_ result:[String:Any] , _ statusCode: Int, _ isSuccess: Bool, _ error: Error?)-> Void)
-    {
-//        ProgressHUD.show()
-        var urlRequest = URLRequest(url: requestUrl)
-        urlRequest.httpMethod = httpMethod.rawValue
-        urlRequest.httpBody = requestBody
-        urlRequest.allHTTPHeaderFields = sendheaders()
-        URLSession.shared.dataTask(with: urlRequest) { (data, httpUrlResponse, error) in
-            guard let httpResponse = httpUrlResponse as? HTTPURLResponse else {return}
-            let statusCode = httpResponse.statusCode
-            guard let jsonData = try? JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String: Any] else {return}
-            if (200...299).contains(statusCode){
-//                ProgressHUD.hide()
-                _=completionHandler(jsonData,statusCode,true,error)
-            }else{
-//                ProgressHUD.hide()
-                _=completionHandler(jsonData,statusCode,false,error)
+ func hitApis(requestUrl: String, httpMethod: HTTPMethod, requestBody: [String:Any], completionHandler:@escaping(_ result:[String:Any] , _ statusCode: Int, _ isSuccess: Bool, _ error: String)-> Void){
+        KRProgressHUD.show()
+        if ReachabilityNetwork.isConnectedToNetwork(){
+            AF.request(requestUrl,method: httpMethod,parameters: requestBody,encoding: JSONEncoding.default,headers: sendheader()).response{
+                response in
+                switch response.result{
+                    
+                case .success(let data):do{
+                    KRProgressHUD.dismiss()
+                    let status = response.response?.statusCode
+                    guard let json = try? JSONSerialization.jsonObject(with: data!,options: .mutableContainers) as? [String:Any] else {return}
+                    if status == 200{
+                        completionHandler(json,status!,true,"")
+                    }else{
+                        let error = json["message"] as? String ?? "error"
+                        completionHandler(json,status!,false,error)
+                    }
+                }
+                case .failure(let error):do{
+                    KRProgressHUD.dismiss()
+                    completionHandler([:],400,false,error.localizedDescription)
+                }
+                    
+                }
             }
 
-        }.resume()
-
-    }
-
+        }else{
+            KRProgressHUD.dismiss()
+            completionHandler([:],400,false,"Please check internet connection")
+        }
+}
     
+    
+    func sendheader() -> HTTPHeaders{
 
-    func sendheaders() -> [String:String]{
-
-        var headers: [String: String] {
+        var headers: HTTPHeaders {
             if let userAuthToken = UserDefaults.standard.object(forKey: "token") as? String {
                 return ["x-access-token":userAuthToken]
             }
@@ -82,5 +94,4 @@ struct ApiManager
         }
         return headers
     }
-
 }

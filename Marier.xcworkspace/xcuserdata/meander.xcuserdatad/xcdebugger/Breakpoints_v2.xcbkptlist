@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6121671E-EC90-4A6A-A3F6-859CA6CC777F"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F7CAFC31-0485-467F-9A07-4745A747AD6C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marier/Controllers/UserModule/SignUp/SignUpVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "signUp(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F7CAFC31-0485-467F-9A07-4745A747AD6C - 4926c1562810ec3a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marier.SignUpVC.signUp(__C.UIButton) -&gt; ()"
+                  moduleName = "Marier"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meander/Desktop/Marier-datingApp/Marier/Controllers/UserModule/SignUp/SignUpVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "74">
+               </Location>
+               <Location
+                  uuid = "F7CAFC31-0485-467F-9A07-4745A747AD6C - 4926c1562810ec3a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marier.SignUpVC.signUp(__C.UIButton) -&gt; ()"
+                  moduleName = "Marier"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meander/Desktop/Marier-datingApp/Marier/Controllers/UserModule/SignUp/SignUpVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1751">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E406DF8F-CDE2-418D-AF25-8113C82C3623"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marier/Controllers/UserModule/SignUp/SignUpVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "signUp(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E406DF8F-CDE2-418D-AF25-8113C82C3623 - 4926c1562810ec78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marier.SignUpVC.signUp(__C.UIButton) -&gt; ()"
+                  moduleName = "Marier"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meander/Desktop/Marier-datingApp/Marier/Controllers/UserModule/SignUp/SignUpVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "2091">
+               </Location>
+               <Location
+                  uuid = "E406DF8F-CDE2-418D-AF25-8113C82C3623 - c848e74e956d078c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.String) -&gt; () in Marier.SignUpVC.signUp(__C.UIButton) -&gt; ()"
+                  moduleName = "Marier"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meander/Desktop/Marier-datingApp/Marier/Controllers/UserModule/SignUp/SignUpVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "133">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "458AF14C-A78D-4C37-84B1-ED4539F23273"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marier/Controllers/UserModule/Login/LoginVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "onContinueTap(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7376E78B-D2E6-44A3-BFAE-EEEAFA84040A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marier/Controllers/UserModule/SexualOrientation/SexualOrientationVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "loadData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

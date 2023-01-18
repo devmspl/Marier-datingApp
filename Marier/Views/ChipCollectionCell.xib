@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChipCollectionCell" id="gTV-IL-0wX" customClass="ChipCollectionCell" customModule="Marier" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="232" height="112"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="232" height="112"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aB-xj-ChC">
+                        <rect key="frame" x="5" y="5" width="222" height="102"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFV-WG-gGV">
+                                <rect key="frame" x="5" y="5" width="212" height="92"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kFV-WG-gGV" firstAttribute="leading" secondItem="7aB-xj-ChC" secondAttribute="leading" constant="5" id="3tD-IF-z51"/>
+                            <constraint firstAttribute="bottom" secondItem="kFV-WG-gGV" secondAttribute="bottom" constant="5" id="CVd-OE-3ig"/>
+                            <constraint firstItem="kFV-WG-gGV" firstAttribute="top" secondItem="7aB-xj-ChC" secondAttribute="top" constant="5" id="eaI-xw-29g"/>
+                            <constraint firstAttribute="trailing" secondItem="kFV-WG-gGV" secondAttribute="trailing" constant="5" id="h2e-an-3bv"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="7aB-xj-ChC" secondAttribute="trailing" constant="5" id="3Vo-KZ-QhR"/>
+                <constraint firstItem="7aB-xj-ChC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="CeP-zl-Icr"/>
+                <constraint firstAttribute="bottom" secondItem="7aB-xj-ChC" secondAttribute="bottom" constant="5" id="Q1g-qg-iqR"/>
+                <constraint firstItem="7aB-xj-ChC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="l6t-Ta-fGo"/>
+            </constraints>
+            <size key="customSize" width="232" height="112"/>
+            <connections>
+                <outlet property="chipView" destination="7aB-xj-ChC" id="f8i-N6-g1g"/>
+                <outlet property="chiptext" destination="kFV-WG-gGV" id="s1F-qS-hIc"/>
+            </connections>
+            <point key="canvasLocation" x="172.51908396946564" y="41.549295774647888"/>
+        </collectionViewCell>
+    </objects>
+</document>

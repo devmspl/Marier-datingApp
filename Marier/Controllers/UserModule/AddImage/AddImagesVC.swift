@@ -8,7 +8,6 @@
 import UIKit
 
 
-
 class AddImagesVC: BaseClass {
 
     @IBOutlet weak var picCollection: UICollectionView!
