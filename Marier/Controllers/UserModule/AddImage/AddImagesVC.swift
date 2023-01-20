@@ -17,7 +17,7 @@ class AddImagesVC: BaseClass {
 
     }
     //MARK: - private function/////
-    private lazy var viewModel: AddImageVM = {
+    internal lazy var viewModel: AddImageVM = {
         return AddImageVM()
     }()
     //MARK: - actions////////////
@@ -25,40 +25,16 @@ class AddImagesVC: BaseClass {
         self.poptoViewController()
     }
     @IBAction func onContinueTap(_ sender: UIButton){
-        let vc = storyBoards.TabBar.instantiateViewController(withIdentifier: "BottomBar") as! BottomBar
-        self.pushVC(controller: vc)
-    }
-
-}
-
-extension AddImagesVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.arrayData.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = picCollection.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PicCollectionCell
-        cell.plusBtn.isHidden = true
-        cell.cellImage.image = viewModel.arrayData[indexPath.item]
-        return cell
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: picCollection.frame.width/2.1, height: picCollection.frame.height/2.1)
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        openCameraAndPhotos(isEditImage: true) { [self] image, message in
-            print(message)
-           viewModel.arrayData.removeAll()
-            for i in 0...3{
-                print(i)
-                viewModel.arrayData.append(image)
+        viewModel.uploadImageApi { [self] isSuccess, error in
+            if isSuccess{
+                let vc = storyBoards.TabBar.instantiateViewController(withIdentifier: "BottomBar") as! BottomBar
+                self.pushVC(controller: vc)
+            }else{
+                alert(message: error)
             }
-            picCollection.reloadData()
-        } failure: { error in
-            print(error)
         }
-
+       
     }
-    
-    
+
 }
+

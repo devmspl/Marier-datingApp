@@ -17,4 +17,5 @@ target 'Marier' do
 	pod 'SwiftyJSON'
 	pod 'Koloda'
 	pod 'DMSwipeCards'
+	pod 'RangeSeekSlider'
 end

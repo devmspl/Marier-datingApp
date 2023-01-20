@@ -114,6 +114,19 @@ func currentTime() -> String {
     return dateFormatter.string(from: date)
 }
 
+
+//MARK: - calculate age of user
+func calculateAge(birthday: String) -> Int{
+    let dateFormater = DateFormatter()
+    dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    let birthdayDate = dateFormater.date(from: birthday)
+    let calendar: NSCalendar! = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+    let now: NSDate! = NSDate()
+    let calcAge = calendar.components(.year, from: birthdayDate!, to: now as Date, options: [])
+    let age = calcAge.year
+    return age!
+}
+
 //MARK: - user id and tokens
     func getUserToken() -> String {
         let token = UserDefaults.standard.value(forKey: "token") as? String ?? ""

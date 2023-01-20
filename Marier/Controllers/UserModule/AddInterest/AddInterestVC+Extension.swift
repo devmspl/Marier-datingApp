@@ -50,6 +50,4 @@ extension AddInterestVC: UICollectionViewDelegate,UICollectionViewDataSource{
         }
                 collectionView.reloadData()
     }
-   
-    
 }

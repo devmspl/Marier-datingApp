@@ -32,6 +32,7 @@ class ApiManager
                 switch response.result{
                     
                 case .success(let data):do{
+                    KRProgressHUD.dismiss()
                      let json =  try? JSONDecoder().decode(T.self, from: data!)
                     let res = try! JSONSerialization.jsonObject(with: data!,options: .mutableContainers) as! [String:Any]
                     let status = response.response?.statusCode
@@ -44,13 +45,21 @@ class ApiManager
                     }
                 }
                 case .failure(let error):do{
+                    KRProgressHUD.dismiss()
                     completion(nil,400,false,error.localizedDescription)
                 }
                 }
             }
             
+        }else{
+            completion(nil,504,false,"Please check internet connection")
         }
     }
+    
+    ///
+    ///
+    ///
+    
  func hitApis(requestUrl: String, httpMethod: HTTPMethod, requestBody: [String:Any], completionHandler:@escaping(_ result:[String:Any] , _ statusCode: Int, _ isSuccess: Bool, _ error: String)-> Void){
         KRProgressHUD.show()
         if ReachabilityNetwork.isConnectedToNetwork(){
@@ -79,15 +88,39 @@ class ApiManager
 
         }else{
             KRProgressHUD.dismiss()
-            completionHandler([:],400,false,"Please check internet connection")
+            completionHandler([:],504,false,"Please check internet connection")
         }
 }
     
+    ///
+    ///
+    func uploadMultipleImages(images: [UIImage],progress:@escaping(_ percent:Float)->(),completion:@escaping(_ result: Bool,_ message: String)->()){
+        
+             let randomno = Int.random(in: 1000...100000)
+             let imgFileName = "image\(randomno).jpg"
+        
+        AF.upload(multipartFormData: { MultipartFormData in
+            for i in 0...images.count-1{
+                                                    
+                    MultipartFormData.append(images[i].jpegData(compressionQuality: 0.8)!,
+                                                             withName: "image",
+                                                             fileName: imgFileName,
+                                                             mimeType: "image/jpeg")
+                                               
+                                              }
+        }, to: ApiUrls.ulpoadGalleryImages+getUserId(), usingThreshold: UInt64.init(), method: .put).uploadProgress { process in
+            progress(Float(process.fractionCompleted))
+        }.response { response in
+            debugPrint(response)
+        }
+    }
+    ///
+    ///
     
     func sendheader() -> HTTPHeaders{
 
         var headers: HTTPHeaders {
-            if let userAuthToken = UserDefaults.standard.object(forKey: "token") as? String {
+            if let userAuthToken = getUserToken() as? String {
                 return ["x-access-token":userAuthToken]
             }
             return ["Content-Type": "application/json"] // + aDictMetaData

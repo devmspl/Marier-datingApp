@@ -21,5 +21,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Please allow current location access to show nearby users</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Please allow current location access to show nearby users</string>
 </dict>
 </plist>

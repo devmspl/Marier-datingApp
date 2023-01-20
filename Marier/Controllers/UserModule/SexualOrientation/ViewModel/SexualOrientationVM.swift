@@ -5,7 +5,7 @@
 //  Created by MacBook M1 on 06/01/23.
 //
 
-import UIKit
+import Foundation
 
 class SexualOrientationVM: NSObject {
 

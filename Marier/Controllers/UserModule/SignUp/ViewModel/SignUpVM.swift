@@ -16,11 +16,16 @@ class SignUpVM: NSObject {
         let validationResult = SignUpValidation().validate(request: requestData)
         
         if validationResult.success{
+            let loc : [String:Any] = ["type":"Point",
+                                      "coordinates":[75.75,74.5]]
             let parameters: [String:Any] = ["name":requestData.name,
                                             "dob":requestData.dob,
                                             "phoneNumber":requestData.phoneNumber,
-                                            "sex":requestData.sex.lowercased()]
-//            ApicallStart
+                                            "sex":requestData.sex.lowercased(),
+                                            "location":loc,
+                                            "address":requestData.address]
+            print(parameters)
+//            ApiCall Start
             ApiManager.shared.hitApis(requestUrl: ApiUrls.signUp, httpMethod: .post, requestBody: parameters) { result, statusCode, isSuccess, error in
                 if isSuccess{
                     let data = result["data"] as! [String:Any]
@@ -30,7 +35,7 @@ class SignUpVM: NSObject {
                 }else{
                     completion(false,error)
                 }
-            }//apiCallEnd
+            }//apiCall End
         }else{
             completion(false,validationResult.error)
         }

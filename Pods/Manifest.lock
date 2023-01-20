@@ -83,6 +83,7 @@ PODS:
   - MDFTextAccessibility (2.0.1)
   - OTPTextField (1.1.5)
   - pop (1.0.12)
+  - RangeSeekSlider (1.8.0)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
@@ -95,6 +96,7 @@ DEPENDENCIES:
   - KRProgressHUD
   - MaterialComponents/Chips
   - OTPTextField
+  - RangeSeekSlider
   - SwiftyJSON
 
 SPEC REPOS:
@@ -112,6 +114,7 @@ SPEC REPOS:
     - MDFTextAccessibility
     - OTPTextField
     - pop
+    - RangeSeekSlider
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -128,8 +131,9 @@ SPEC CHECKSUMS:
   MDFTextAccessibility: f4bb4cc2194286651b59a215fdeaa0e05dc90ba5
   OTPTextField: 9d35010a6356972471298aea37bf8d6d5f9974f7
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: b510f6109bdd63b1d332d90ffffac86bdfa6e1a6
+PODFILE CHECKSUM: 1d38288be94ecd39e3efd6254bc85390b78d0b9e
 
 COCOAPODS: 1.11.3

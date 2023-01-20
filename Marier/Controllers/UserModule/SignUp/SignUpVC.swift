@@ -13,6 +13,7 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var gender: UITextField!
     @IBOutlet weak var dateOfBirth: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
+    @IBOutlet weak var address: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,7 @@ class SignUpVC: UIViewController {
     }
     @IBAction func signUp(_ sender: UIButton){
         
-        let request = SignUpModel(name: fullName.text ?? "", phoneNumber: phoneNumber.text ?? "", sex: gender.text ?? "", dob: dateOfBirth.text ?? "")
+        let request = SignUpModel(name: fullName.text ?? "", phoneNumber: phoneNumber.text ?? "", sex: gender.text ?? "", dob: dateOfBirth.text ?? "", address: address.text ?? "")
         
             viewModel.apiCall(requestData: request, completion: { isSuccess, error in
                if isSuccess{
