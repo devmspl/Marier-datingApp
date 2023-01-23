@@ -26,7 +26,7 @@ class AddInterestVM: NSObject {
     
 //MARK: - addInterestApi//////
     func addInterests(completion:@escaping(Bool,String)->()){
-        let requestBody = ["interests":selectedInterests]
+        let requestBody = InterestRequestModel(interests: selectedInterests)
         ApiManager.shared.hitApis(requestUrl: ApiUrls.addInterest+getUserId(), httpMethod: .put, requestBody: requestBody) { result, statusCode, isSuccess, error in
             if isSuccess{
                 completion(true,"")

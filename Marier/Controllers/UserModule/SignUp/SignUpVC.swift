@@ -17,7 +17,7 @@ class SignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dateOfBirth.delegate = self
         // Do any additional setup after loading the view.
     }
     //MARK: - private functions
@@ -25,28 +25,29 @@ class SignUpVC: UIViewController {
         return SignUpVM()
     }()
 
-//MARK: - ibaction
+//MARK: - Acstion
     @IBAction func backTap(_ sender: UIButton){
         self.poptoViewController()
     }
     @IBAction func genderDropDown(_ sender: UIButton){
-        
+        viewModel.selectGender(anchorView: gender)
     }
-    @IBAction func dateSelection(_ sender: UIButton){
-        
-    }
+    
     @IBAction func loginWithFacebook(_ sender: UIButton){
         
     }
+    
     @IBAction func loginWithGoogle(_ sender: UIButton){
         
     }
+    
     @IBAction func loginWithApple(_ sender: UIButton){
         
     }
+    
     @IBAction func signUp(_ sender: UIButton){
-        
-        let request = SignUpModel(name: fullName.text ?? "", phoneNumber: phoneNumber.text ?? "", sex: gender.text ?? "", dob: dateOfBirth.text ?? "", address: address.text ?? "")
+        let location = Location(type: "Point", coordinates: [75.75,74.5])
+        let request = SignUpModel(name: fullName.text ?? "", phoneNumber: phoneNumber.text ?? "", sex: gender.text?.lowercased() ?? "", dob: dateOfBirth.text ?? "", location: location, address: address.text ?? "")
         
             viewModel.apiCall(requestData: request, completion: { isSuccess, error in
                if isSuccess{

@@ -7,23 +7,14 @@
 
 import UIKit
 
-protocol loginResponse{
-    func getLoginResponse(loginResponse: LoginResponseModel)
-}
-
 class LoginVM: NSObject {
-    
-    ///
-    var delegate: loginResponse?
-    ///
     
     func loginApi(requestData: LoginModel,completion: @escaping(Bool,String)->()){
         
         let validationResult = LoginValidation().validate(loginRequest: requestData)
         
         if validationResult.success{
-            let requestBody = ["phoneNumber":requestData.phoneNumber]
-            ApiManager.shared.hitApis(requestUrl: ApiUrls.login, httpMethod: .post, requestBody: requestBody) { result, statusCode, isSuccess, error in
+            ApiManager.shared.hitApis(requestUrl: ApiUrls.login, httpMethod: .post, requestBody: requestData) { result, statusCode, isSuccess, error in
                 if isSuccess{
                     let data = result["data"] as! [String:Any]
                     let token = data["token"] as! String
@@ -36,6 +27,5 @@ class LoginVM: NSObject {
         }else{
             completion(false,validationResult.error)
         }
-        
     }
 }

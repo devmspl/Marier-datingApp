@@ -7,13 +7,8 @@
 
 import Foundation
 
-struct SignUpModel:Encodable{
+struct SignUpModel:Codable{
     let name,phoneNumber,sex,dob: String
-//    let location: LocRequest
+    let location: Location
     let address: String
-}
-
-struct LocRequest: Encodable{
-    let type: String
-    let coordinates: [Double]
 }

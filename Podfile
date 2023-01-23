@@ -18,4 +18,7 @@ target 'Marier' do
 	pod 'Koloda'
 	pod 'DMSwipeCards'
 	pod 'RangeSeekSlider'
+	pod 'IQKeyboardManagerSwift'
+	pod 'Toast'
+	pod 'ImagePickerController'
 end

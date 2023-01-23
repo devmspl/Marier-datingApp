@@ -9,10 +9,10 @@ import Foundation
 
 struct OTPValidation{
     
-    func validateOtp(otp:String)->validateFields{
-        if otp.isEmpty {
+    func validateOtp(otp:OtpRequestModel)->validateFields{
+        if otp.otp.isEmpty {
             return validateFields(success: false, error: "Please enter OTP")
-        }else if otp.count < 4{
+        }else if otp.otp.count < 4{
             return validateFields(success: false, error: "Please enter Valid OTP")
         }
        return validateFields(success: true, error: "")

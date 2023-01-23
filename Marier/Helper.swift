@@ -10,11 +10,11 @@ import UIKit
 
 //MARK: - Storyboards
 struct storyBoards {
-    static let Main = UIStoryboard(name: "Main", bundle: nil)
-    static let Profile = UIStoryboard(name: "Profile", bundle: nil)
-    static let Chat = UIStoryboard(name: "Chat", bundle: .main)
-    static let Match = UIStoryboard(name: "Match", bundle: nil)
-    static let TabBar = UIStoryboard(name: "TabBar", bundle: nil)
+    static let Main = UIStoryboard(name: "Main", bundle: Bundle.main)
+    static let Profile = UIStoryboard(name: "Profile", bundle: Bundle.main)
+    static let Chat = UIStoryboard(name: "Chat", bundle: Bundle.main)
+    static let Match = UIStoryboard(name: "Match", bundle: Bundle.main)
+    static let TabBar = UIStoryboard(name: "TabBar", bundle: Bundle.main)
 }
 
 //MARK: - purpleButton class//////
@@ -126,6 +126,8 @@ func calculateAge(birthday: String) -> Int{
     let age = calcAge.year
     return age!
 }
+
+
 
 //MARK: - user id and tokens
     func getUserToken() -> String {

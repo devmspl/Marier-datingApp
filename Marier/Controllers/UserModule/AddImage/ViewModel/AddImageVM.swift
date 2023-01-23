@@ -16,23 +16,11 @@ class AddImageVM: NSObject {
         let validationResult = ValidateImages().validate(images: arrayData)
         
         if validationResult.success{
-//            ApiManager.shared.uploadMultipleImages(images: arrayData) {  [weak self] percent in
-//                guard let _ = self else {
-//                  return
-//                }
-//                if percent == 1.0{
-//                    completion(true,"success")
-//                }else{
-//                    completion(false,"Unable to upload images")
-//                }
-//            } completion: { result in
-//                print(result)
-//            }
-            
             ApiManager.shared.uploadMultipleImages(
                 images: arrayData,
                         progress: { [weak self] percent in
                            guard let _ = self else {
+                               completion(false,"percent\(percent)")
                              return
                            }
                            print("Status: \(percent)")
@@ -40,9 +28,6 @@ class AddImageVM: NSObject {
                           if percent == 1.0{
                             completion(true,"success")
                            }
-                            else{
-                                completion(false,"Status: \(percent)")
-                            }
                          },
                          completion: { [weak self] result,message in
                            guard let _ = self else {

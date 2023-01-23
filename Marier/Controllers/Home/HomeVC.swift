@@ -25,9 +25,9 @@ class HomeVC: UIViewController{
       
         swipeView.delegate = self
         swipeView.dataSource = self
-        
+        segmentCtrl.selectedSegmentIndex = 1
+        viewModel.sexType = GetType().sexType(index: segmentCtrl.selectedSegmentIndex)
         setData()
-        
     }
     
     
@@ -55,7 +55,6 @@ class HomeVC: UIViewController{
             if isSuccess{
                 viewModel.dataForCard()
                 swipeView.reloadData()
-               
             }else{
                 alert(message: error)
             }
@@ -64,7 +63,7 @@ class HomeVC: UIViewController{
     
 //MARK: - actions
     @IBAction func selectDistance(_ sender: Any) {
-        selectedDistance.text = viewModel.setDropDownText(textField: selectedDistance)
+        viewModel.setDropDownText(textField: selectedDistance)
     }
     @IBAction func segmentChanged(_ sender: Any) {
         viewModel.sexType = GetType().sexType(index: segmentCtrl.selectedSegmentIndex)
@@ -82,9 +81,17 @@ class HomeVC: UIViewController{
             }
         }
     }
-    
     @IBAction func backTapped(_ sender: Any) {
         filterView.removeFromSuperview()
+    }
+    @IBAction func disLikeTappped(_ sender: Any) {
+        swipeView.swipe(.left)
+    }
+    @IBAction func superLiketapped(_ sender: Any) {
+        swipeView.swipe(.up)
+    }
+    @IBAction func likeTapped(_ sender: Any) {
+        swipeView.swipe(.right)
     }
 }
 

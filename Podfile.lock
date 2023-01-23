@@ -5,6 +5,8 @@ PODS:
   - AlignedCollectionViewFlowLayout (1.1.2)
   - DMSwipeCards (1.0.3)
   - DropDown (2.3.13)
+  - ImagePickerController (0.2.4)
+  - IQKeyboardManagerSwift (6.5.10)
   - Koloda (5.0.1):
     - pop (~> 1.0)
   - KRActivityIndicatorView (3.0.7)
@@ -85,6 +87,7 @@ PODS:
   - pop (1.0.12)
   - RangeSeekSlider (1.8.0)
   - SwiftyJSON (5.0.1)
+  - Toast (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -92,12 +95,15 @@ DEPENDENCIES:
   - AlignedCollectionViewFlowLayout
   - DMSwipeCards
   - DropDown
+  - ImagePickerController
+  - IQKeyboardManagerSwift
   - Koloda
   - KRProgressHUD
   - MaterialComponents/Chips
   - OTPTextField
   - RangeSeekSlider
   - SwiftyJSON
+  - Toast
 
 SPEC REPOS:
   trunk:
@@ -106,6 +112,8 @@ SPEC REPOS:
     - AlignedCollectionViewFlowLayout
     - DMSwipeCards
     - DropDown
+    - ImagePickerController
+    - IQKeyboardManagerSwift
     - Koloda
     - KRActivityIndicatorView
     - KRProgressHUD
@@ -116,6 +124,7 @@ SPEC REPOS:
     - pop
     - RangeSeekSlider
     - SwiftyJSON
+    - Toast
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
@@ -123,6 +132,8 @@ SPEC CHECKSUMS:
   AlignedCollectionViewFlowLayout: ee2ef451e741ec08f8e0967d828001e2f051c20a
   DMSwipeCards: 0f2488120c13eb73366f01e87d1423495cde8ed4
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  ImagePickerController: ae3fbb80e4e29e540185b7d217657dd53a3c8fca
+  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   Koloda: d07b9199a383abc5898b62aa945a599f5e7c0c4b
   KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
   KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
@@ -133,7 +144,8 @@ SPEC CHECKSUMS:
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 1d38288be94ecd39e3efd6254bc85390b78d0b9e
+PODFILE CHECKSUM: b8eaae7d5300e5aeb71fecc8c770431c72cf8b5d
 
 COCOAPODS: 1.11.3

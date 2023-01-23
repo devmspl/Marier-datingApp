@@ -23,7 +23,7 @@ class SexualOrientationVM: NSObject {
         ///
         if validationResult.success{
             //ApiCallStart
-            let requestBody = ["sexualOrientations":orientations]
+            let requestBody = OrientationRequest(sexualOrientations: selectedInterests)
             ApiManager.shared.hitApis(requestUrl: ApiUrls.sexualOrientation+getUserId(), httpMethod: .put, requestBody: requestBody) { result, statusCode, isSuccess, error in
                 if isSuccess{
                     completion(isSuccess,"")

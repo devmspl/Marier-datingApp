@@ -28,6 +28,8 @@ struct ApiUrls{
     ///
     public static var ulpoadGalleryImages       = baseUrl + "users/uploadImagesByUserId/"
     ///
+    public static var getCurrentUser            = baseUrl + "users/current/"
+    ///
     public static var updateUser                = baseUrl + "users/update/"
     
 //MARK: - home screen api endpoints
@@ -35,4 +37,6 @@ struct ApiUrls{
     public static var getMatchList              = baseUrl + "users/matchList"
     public static var getAll                    = baseUrl + "users/getAll"
     public static var getRandomList             = baseUrl + "users/randomList/"
+    public static var likeUser                  = baseUrl + "likes/create"
+    
 }

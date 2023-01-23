@@ -10,6 +10,7 @@ import Koloda
 import AlamofireImage
 import RangeSeekSlider
 
+
 extension HomeVC: KolodaViewDelegate,KolodaViewDataSource{
     
 //MARK: -DataSource functions
@@ -36,19 +37,40 @@ extension HomeVC: KolodaViewDelegate,KolodaViewDataSource{
     }
     
 //MARK: - Delegate functions
+    //SwipeResultSirection
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        let likeTo = viewModel.swipeCardData[index].id
+      
         if direction == .left{
-            
+            print("userDisliked")
         }else if direction == .right{
-            
+            let requestData = LikeData().swipeDirection(likeTo: likeTo, direction: "right")
+            viewModel.likeUserApi(requestBody: requestData) { isSuccess, error in
+                if isSuccess{
+                    print("userLiked")
+                }else{
+                    self.alert(message: error)
+                }
+            }
+
         }else if direction == .up{
-            
+            let requestData = LikeData().swipeDirection(likeTo: likeTo, direction: "up")
+            viewModel.likeUserApi(requestBody: requestData) { isSuccess, error in
+                
+                if isSuccess{
+                    print("userLiked")
+                }else{
+                    self.alert(message: error)
+                }
+            }
+
         }
     }
-    
+    //Allowed directions
     func koloda(_ koloda: KolodaView, allowedDirectionsForIndex index: Int) -> [SwipeResultDirection] {
         return [.left,.right,.up]
     }
+    //DidSelect
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
         print("selected")
     }

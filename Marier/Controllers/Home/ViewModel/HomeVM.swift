@@ -20,7 +20,8 @@ class HomeVM: NSObject{
     var distance = 10
     var distanceArray = ["10","20","30","50","100"]
     var dropDown = DropDown()
-    
+    ///
+    ///
 //MARK: - getMatchList api call
     func getMatchList(completion:@escaping(Bool,String)->()){
         ApiManager.shared.getDataApi(requestUrl: ApiUrls.getRandomList+getUserId(), httpMethod: .get, resultType: BaseResponse<[RandomListModel]>.self) { [self] result, statusCode, isSuccess, error in
@@ -33,17 +34,13 @@ class HomeVM: NSObject{
             }
         }
     }
-
+///
+    ///
+    ///
 //MARK: - setFilter api
     func addFilterApi(completion:@escaping(Bool,String)->()){
-        
-        let params: [String:Any] = ["location": location,
-                                    "ageRange":selectedAgeRange,
-                                    "sexType":sexType,
-                                    "distance":distance,
-                                    "language":"English"]
-        let para: [String:Any] = ["setting": params]
-        ApiManager.shared.hitApis(requestUrl: ApiUrls.updateUser+getUserId(), httpMethod: .put, requestBody: para) { result, statusCode, isSuccess, error in
+        let requestBody = UserSettings(location: location, ageRange: selectedAgeRange, sexType: sexType, distance: distance, language: "language")
+        ApiManager.shared.hitApis(requestUrl: ApiUrls.updateUser+getUserId(), httpMethod: .put, requestBody: requestBody) { result, statusCode, isSuccess, error in
             if isSuccess{
                 completion(isSuccess,"")
             }else{
@@ -51,6 +48,21 @@ class HomeVM: NSObject{
             }
         }
     }
+    ///
+    ///
+    ///
+//MARK: - like user api
+    func likeUserApi(requestBody: LikeRequestModel,completion:@escaping(Bool,String)->()){
+        ApiManager.shared.hitApis(requestUrl: ApiUrls.likeUser, httpMethod: .post, requestBody: requestBody) { result, statusCode, isSuccess, error in
+            if isSuccess{
+                completion(isSuccess,"")
+            }else{
+                completion(isSuccess,error)
+            }
+        }
+    }
+    ///
+    ///
 //MARK: - cardData
     func dataForCard(){
         if swipeCardData.count > 0{
@@ -71,23 +83,36 @@ class HomeVM: NSObject{
             }
         }
     }
-    
+   ///
+    ///
+    ///
 //MARK: - getGalleryImage
     func getGalleryImage()->URL?{
         var imageUrl: URL?
         for i in 0...swipeCardData.count-1{
-            let img = swipeCardData[i].gallery[0].image
-            imageUrl = URL(string: img)
+            let gallery = swipeCardData[i].gallery
+            if gallery.isEmpty{
+                return URL(string: "")
+            }else{
+                let img = swipeCardData[i].gallery[0].image
+                imageUrl = URL(string: img)
+            }
         }
         return imageUrl
     }
-    
+    ///
+    ///
+    ///
 //MARK: - setDrop down text
-    func setDropDownText(textField: UITextField)->String{
-        
-        self.distance = GetDistance().getDist(drop: dropDown, view: textField, dropArray: distanceArray)
-        
-        return "\(distance) KM"
+    func setDropDownText(textField: UITextField){
+        dropDown.show()
+        dropDown.anchorView = textField
+        dropDown.dataSource = distanceArray
+        dropDown.selectionAction = { [unowned self] (index: Int,Item: String) in
+            distance = Int(Item) ?? 10
+            textField.text = Item + " KM"
+            dropDown.hide()
+        }
     }
 //MARK: - 
 }

@@ -37,11 +37,18 @@ class OTPVC: UIViewController {
         
     }
     @IBAction func onContinueTap(_ sender: UIButton){
-        
-            viewModel.apiCall(otp: otpTextField.text!) { isSuccess, error in
+        let otpModel = OtpRequestModel(otp: otpTextField.text ?? "")
+        viewModel.apiCall(otp: otpModel) { isSuccess,error in
                 if isSuccess{
-                    let vc = storyBoards.Main.instantiateViewController(withIdentifier: "SexualOrientationVC") as! SexualOrientationVC
-                    self.pushVC(controller: vc)
+                    Navigation().getUserDataAndNavigate { isSuccess, navigation, error in
+                        if isSuccess{
+                            UIApplication.shared.keyWindow?.rootViewController = navigation
+                            UIApplication.shared.keyWindow?.makeKeyAndVisible()
+                        }else{
+                            self.alert(message: error)
+                        }
+                    }
+                  
                 }else{
                     self.alert(message: error)
                 }

@@ -624,7 +624,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDf-7G-0Py">
-                                        <rect key="frame" x="50" y="0.0" width="255" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="48"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="dropDown"/>
                                         <connections>
@@ -642,7 +642,7 @@
                                     <constraint firstAttribute="trailing" secondItem="f3N-Q0-aVA" secondAttribute="trailing" id="evl-C2-IVo"/>
                                     <constraint firstItem="f3N-Q0-aVA" firstAttribute="top" secondItem="mva-p1-Vz4" secondAttribute="top" id="iMV-1F-rIP"/>
                                     <constraint firstAttribute="height" constant="50" id="nX1-H0-M11"/>
-                                    <constraint firstItem="NDf-7G-0Py" firstAttribute="leading" secondItem="mva-p1-Vz4" secondAttribute="leading" constant="50" id="rU2-qf-mL4"/>
+                                    <constraint firstItem="NDf-7G-0Py" firstAttribute="leading" secondItem="mva-p1-Vz4" secondAttribute="leading" id="rU2-qf-mL4"/>
                                     <constraint firstAttribute="bottom" secondItem="Q3b-t1-MVs" secondAttribute="bottom" id="sRs-HC-4NB"/>
                                     <constraint firstItem="f3N-Q0-aVA" firstAttribute="leading" secondItem="mva-p1-Vz4" secondAttribute="leading" id="uNe-Kj-YZn"/>
                                     <constraint firstItem="Q3b-t1-MVs" firstAttribute="top" secondItem="f3N-Q0-aVA" secondAttribute="bottom" id="von-vN-Pfp"/>
@@ -747,28 +747,16 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDg-NP-Cea">
-                                        <rect key="frame" x="50" y="0.0" width="255" height="50"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="dropDown"/>
-                                        <connections>
-                                            <action selector="dateSelection:" destination="Tfj-0X-Yn4" eventType="touchUpInside" id="av5-4G-dXF"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="jDg-NP-Cea" secondAttribute="bottom" id="2xS-7l-FlP"/>
                                     <constraint firstAttribute="bottom" secondItem="tuQ-YL-kj0" secondAttribute="bottom" id="9uQ-XX-Hze"/>
                                     <constraint firstItem="tuQ-YL-kj0" firstAttribute="leading" secondItem="6B0-ho-gdz" secondAttribute="leading" id="Nw8-Y5-VUE"/>
                                     <constraint firstAttribute="height" constant="50" id="PUw-rB-ExD"/>
                                     <constraint firstItem="wVk-q3-ez3" firstAttribute="top" secondItem="6B0-ho-gdz" secondAttribute="top" id="RRS-S9-Tpd"/>
-                                    <constraint firstItem="jDg-NP-Cea" firstAttribute="top" secondItem="6B0-ho-gdz" secondAttribute="top" id="Rp7-ON-AP2"/>
                                     <constraint firstAttribute="trailing" secondItem="wVk-q3-ez3" secondAttribute="trailing" id="TSW-0y-bcc"/>
-                                    <constraint firstAttribute="trailing" secondItem="jDg-NP-Cea" secondAttribute="trailing" constant="5" id="WeV-w9-iT3"/>
                                     <constraint firstAttribute="trailing" secondItem="tuQ-YL-kj0" secondAttribute="trailing" id="Zdy-rG-VRO"/>
                                     <constraint firstItem="wVk-q3-ez3" firstAttribute="leading" secondItem="6B0-ho-gdz" secondAttribute="leading" id="dK6-AR-7Zk"/>
-                                    <constraint firstItem="jDg-NP-Cea" firstAttribute="leading" secondItem="6B0-ho-gdz" secondAttribute="leading" constant="50" id="tKv-mk-n2g"/>
                                     <constraint firstItem="tuQ-YL-kj0" firstAttribute="top" secondItem="wVk-q3-ez3" secondAttribute="bottom" id="tiM-41-n81"/>
                                 </constraints>
                             </view>

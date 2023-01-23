@@ -6,27 +6,20 @@
 //
 
 import UIKit
+import DropDown
 
 class SignUpVM: NSObject {
-
-        
+    
+    let drop = DropDown()
+    let genderArray = ["Male","Female","Others"]
     //MARK: - api call
     func apiCall(requestData:SignUpModel,completion: @escaping(Bool,String)->()){
         
         let validationResult = SignUpValidation().validate(request: requestData)
         
         if validationResult.success{
-            let loc : [String:Any] = ["type":"Point",
-                                      "coordinates":[75.75,74.5]]
-            let parameters: [String:Any] = ["name":requestData.name,
-                                            "dob":requestData.dob,
-                                            "phoneNumber":requestData.phoneNumber,
-                                            "sex":requestData.sex.lowercased(),
-                                            "location":loc,
-                                            "address":requestData.address]
-            print(parameters)
-//            ApiCall Start
-            ApiManager.shared.hitApis(requestUrl: ApiUrls.signUp, httpMethod: .post, requestBody: parameters) { result, statusCode, isSuccess, error in
+            //            ApiCall Start
+            ApiManager.shared.hitApis(requestUrl: ApiUrls.signUp, httpMethod: .post, requestBody: requestData) { result, statusCode, isSuccess, error in
                 if isSuccess{
                     let data = result["data"] as! [String:Any]
                     let token = data["token"] as! String
@@ -38,6 +31,17 @@ class SignUpVM: NSObject {
             }//apiCall End
         }else{
             completion(false,validationResult.error)
+        }
+    }
+    
+//MARK: - genderDropDown
+    func selectGender(anchorView: UITextField){
+        drop.show()
+        drop.anchorView = anchorView
+        drop.dataSource = genderArray
+        drop.selectionAction = { [unowned self](index: Int,item: String) in
+            drop.hide()
+            anchorView.text = item
         }
     }
 }

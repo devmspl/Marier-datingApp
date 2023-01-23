@@ -13,8 +13,6 @@ class LocationClass: NSObject,CLLocationManagerDelegate {
     var manager = CLLocationManager()
     
     func currentLocation()->Location{
-        
-        
         return Location(type: "Point", coordinates: [75.75,74.5])
     }
     

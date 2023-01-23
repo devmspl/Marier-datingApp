@@ -18,7 +18,5 @@ class MatchVM: NSObject {
             return vc
         }
        
-    }
-  
-    
+    }    
 }

@@ -34,7 +34,7 @@ class ApiManager
                 case .success(let data):do{
                     KRProgressHUD.dismiss()
                      let json =  try? JSONDecoder().decode(T.self, from: data!)
-                    let res = try! JSONSerialization.jsonObject(with: data!,options: .mutableContainers) as! [String:Any]
+                  
                     let status = response.response?.statusCode
                     if status == 200{
                         completion(json,status!,true,"")
@@ -60,10 +60,10 @@ class ApiManager
     ///
     ///
     
- func hitApis(requestUrl: String, httpMethod: HTTPMethod, requestBody: [String:Any], completionHandler:@escaping(_ result:[String:Any] , _ statusCode: Int, _ isSuccess: Bool, _ error: String)-> Void){
+    func hitApis<T:Codable>(requestUrl: String, httpMethod: HTTPMethod, requestBody: T, completionHandler:@escaping(_ result:[String:Any] , _ statusCode: Int, _ isSuccess: Bool, _ error: String)-> Void){
         KRProgressHUD.show()
         if ReachabilityNetwork.isConnectedToNetwork(){
-            AF.request(requestUrl,method: httpMethod,parameters: requestBody,encoding: JSONEncoding.default,headers: sendheader()).response{
+            AF.request(requestUrl,method: httpMethod,parameters: requestBody,encoder: JSONParameterEncoder.default,headers: sendheader()).response{
                 response in
                 switch response.result{
                     
@@ -85,15 +85,49 @@ class ApiManager
                     
                 }
             }
-
         }else{
             KRProgressHUD.dismiss()
             completionHandler([:],504,false,"Please check internet connection")
         }
 }
-    
+
     ///
     ///
+    func hitApiWithResponse<T:Codable,R:Codable>(requestUrl: String, httpMethod: HTTPMethod, requestBody: T,responseData: R.Type, completionHandler:@escaping(_ result:R? , _ statusCode: Int, _ isSuccess: Bool, _ error: String)-> Void){
+        KRProgressHUD.show()
+        if ReachabilityNetwork.isConnectedToNetwork(){
+            AF.request(requestUrl,method: httpMethod,parameters: requestBody,encoder: JSONParameterEncoder.default,headers: sendheader()).response{
+                response in
+                switch response.result{
+                    
+                case .success(let data):do{
+                    KRProgressHUD.dismiss()
+                    let status = response.response?.statusCode
+                    guard let json = try? JSONSerialization.jsonObject(with: data!,options: .mutableContainers) as? [String:Any] else {return}
+                    let responseData = try? JSONDecoder().decode(R.self, from: data!)
+                    if status == 200{
+                        completionHandler(responseData,status!,true,"")
+                    }else{
+                        let error = json["message"] as? String ?? "error"
+                        completionHandler(responseData,status!,false,error)
+                    }
+                }
+                case .failure(let error):do{
+                    KRProgressHUD.dismiss()
+                    completionHandler(nil,400,false,error.localizedDescription)
+                }
+                }
+            }
+        }else{
+            KRProgressHUD.dismiss()
+            completionHandler(nil,504,false,"Please check internet connection")
+        }
+}
+
+    ///
+    ///
+    ///
+    //MARK: - upload imagesApi
     func uploadMultipleImages(images: [UIImage],progress:@escaping(_ percent:Float)->(),completion:@escaping(_ result: Bool,_ message: String)->()){
         
              let randomno = Int.random(in: 1000...100000)
