@@ -11,12 +11,9 @@ class AddImageVM: NSObject {
 
     var arrayData = [UIImage]()
     
-    
     func uploadImageApi(completion:@escaping(Bool,String)->()){
-        let validationResult = ValidateImages().validate(images: arrayData)
-        
-        if validationResult.success{
-            ApiManager.shared.uploadMultipleImages(
+      
+            ApiManager.shared.uploadImages(
                 images: arrayData,
                         progress: { [weak self] percent in
                            guard let _ = self else {
@@ -34,10 +31,5 @@ class AddImageVM: NSObject {
                              return
                            }
                        })
-        }else{
-            completion(false,validationResult.error)
         }
-       
-
-    }
 }

@@ -25,5 +25,11 @@
 	<string>Please allow current location access to show nearby users</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Please allow current location access to show nearby users</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow camera permission to upload profile images and gallery images to user profile</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please allow camera permission to upload profile images and gallery images to user profile</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Please allow camera permission to upload profile images and gallery images to user profile</string>
 </dict>
 </plist>

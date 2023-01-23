@@ -128,7 +128,7 @@ class ApiManager
     ///
     ///
     //MARK: - upload imagesApi
-    func uploadMultipleImages(images: [UIImage],progress:@escaping(_ percent:Float)->(),completion:@escaping(_ result: Bool,_ message: String)->()){
+    func uploadImages(images: [UIImage],progress:@escaping(_ percent:Float)->(),completion:@escaping(_ result: Bool,_ message: String)->()){
         
              let randomno = Int.random(in: 1000...100000)
              let imgFileName = "image\(randomno).jpg"

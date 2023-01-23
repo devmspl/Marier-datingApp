@@ -37,9 +37,9 @@ class ProfileVC: BaseClass {
     
     //getUserDataFunction
     private func getData(){
-        viewModel.getProfileData { [self] isSuccess, result, error in
+        viewModel.getProfileData { [self] isSuccess,error in
             if isSuccess{
-                userData = result
+                userData = viewModel.userData
                 setData()
             }else{
                 alert(message: error)
@@ -63,9 +63,10 @@ class ProfileVC: BaseClass {
     ///
     //MARK: - actions/////
     @IBAction func selectPhoto(_ sender: UIButton){
-        openCameraAndPhotos(isEditImage: true) { image, message in
+        openCameraAndPhotos(isEditImage: true) {[self] image, message in
             self.profileImage.image = image
             print(message)
+            viewModel.uploadProfileImage(image: [image])
         } failure: { error in
             print(error)
         }

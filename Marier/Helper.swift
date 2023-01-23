@@ -120,6 +120,7 @@ func calculateAge(birthday: String) -> Int{
     let dateFormater = DateFormatter()
     dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss"
     let birthdayDate = dateFormater.date(from: birthday)
+//    dateFormater.dateFormat = "dd-mm-yyyy"
     let calendar: NSCalendar! = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
     let now: NSDate! = NSDate()
     let calcAge = calendar.components(.year, from: birthdayDate!, to: now as Date, options: [])

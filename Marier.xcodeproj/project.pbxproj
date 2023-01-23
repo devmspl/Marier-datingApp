@@ -22,7 +22,6 @@
 		7623603429766C7F00750F29 /* validateFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623603329766C7F00750F29 /* validateFields.swift */; };
 		762B2C3D29792F2A00353724 /* SwipeViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B2C3C29792F2A00353724 /* SwipeViewData.swift */; };
 		762B2C3F29796F4B00353724 /* AddImagesVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B2C3E29796F4B00353724 /* AddImagesVC+Extension.swift */; };
-		762B2C4129796FC400353724 /* ValidateImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B2C4029796FC400353724 /* ValidateImages.swift */; };
 		762B2C43297A5B5500353724 /* RandomListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B2C42297A5B5400353724 /* RandomListModel.swift */; };
 		762B99D82976B20A0087F146 /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B99D72976B20A0087F146 /* SignUpVM.swift */; };
 		762B99DA2976B2140087F146 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B99D92976B2140087F146 /* SignUpModel.swift */; };
@@ -56,6 +55,7 @@
 		7638C9D92966D69C0014AF52 /* NearbyTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7638C9D72966D69C0014AF52 /* NearbyTableCell.xib */; };
 		7648A61729790EBB00157CAD /* SwipeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7648A61629790EBB00157CAD /* SwipeView.xib */; };
 		7648A61E297914FE00157CAD /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7648A61D297914FE00157CAD /* LoginResponseModel.swift */; };
+		764CC60C297E7A7900839DEF /* CheckImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764CC60B297E7A7900839DEF /* CheckImages.swift */; };
 		768E0451297AA145000277E0 /* GetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E0450297AA145000277E0 /* GetType.swift */; };
 		768E0455297AAA17000277E0 /* LocationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E0454297AAA17000277E0 /* LocationClass.swift */; };
 		7691FB6A29680A2E005C38B0 /* OreintationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691FB6929680A2E005C38B0 /* OreintationCell.swift */; };
@@ -97,6 +97,8 @@
 		76D8C8262969979D00FE72B5 /* NearbyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D8C8252969979D00FE72B5 /* NearbyVM.swift */; };
 		76D8C8282969A2B000FE72B5 /* AllChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D8C8272969A2B000FE72B5 /* AllChatVC.swift */; };
 		76D8C82A296BD33100FE72B5 /* PlanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76D8C829296BD33100FE72B5 /* PlanView.xib */; };
+		76EC2747297EA59700C7D80C /* ConvertAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC2746297EA59700C7D80C /* ConvertAsset.swift */; };
+		76EC2749297EA9DB00C7D80C /* ValidateImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC2748297EA9DB00C7D80C /* ValidateImages.swift */; };
 		EE7B37AACFA82725DEB8E9E8 /* Pods_Marier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FDE87A782041E1E8C1AA1EC /* Pods_Marier.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,7 +118,6 @@
 		7623603329766C7F00750F29 /* validateFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validateFields.swift; sourceTree = "<group>"; };
 		762B2C3C29792F2A00353724 /* SwipeViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewData.swift; sourceTree = "<group>"; };
 		762B2C3E29796F4B00353724 /* AddImagesVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddImagesVC+Extension.swift"; sourceTree = "<group>"; };
-		762B2C4029796FC400353724 /* ValidateImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateImages.swift; sourceTree = "<group>"; };
 		762B2C42297A5B5400353724 /* RandomListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomListModel.swift; sourceTree = "<group>"; };
 		762B99D72976B20A0087F146 /* SignUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
 		762B99D92976B2140087F146 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
@@ -150,6 +151,7 @@
 		7638C9D72966D69C0014AF52 /* NearbyTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NearbyTableCell.xib; sourceTree = "<group>"; };
 		7648A61629790EBB00157CAD /* SwipeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeView.xib; sourceTree = "<group>"; };
 		7648A61D297914FE00157CAD /* LoginResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
+		764CC60B297E7A7900839DEF /* CheckImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckImages.swift; sourceTree = "<group>"; };
 		768E0450297AA145000277E0 /* GetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetType.swift; sourceTree = "<group>"; };
 		768E0454297AAA17000277E0 /* LocationClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationClass.swift; sourceTree = "<group>"; };
 		7691FB6929680A2E005C38B0 /* OreintationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OreintationCell.swift; sourceTree = "<group>"; };
@@ -193,6 +195,8 @@
 		76D8C8252969979D00FE72B5 /* NearbyVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyVM.swift; sourceTree = "<group>"; };
 		76D8C8272969A2B000FE72B5 /* AllChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChatVC.swift; sourceTree = "<group>"; };
 		76D8C829296BD33100FE72B5 /* PlanView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanView.xib; sourceTree = "<group>"; };
+		76EC2746297EA59700C7D80C /* ConvertAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertAsset.swift; sourceTree = "<group>"; };
+		76EC2748297EA9DB00C7D80C /* ValidateImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateImages.swift; sourceTree = "<group>"; };
 		9FDE87A782041E1E8C1AA1EC /* Pods_Marier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1991BA6B1174A2BB495BAA1 /* Pods-Marier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marier.debug.xcconfig"; path = "Target Support Files/Pods-Marier/Pods-Marier.debug.xcconfig"; sourceTree = "<group>"; };
 		F25DA579FCD1A9E9429C7362 /* Pods-Marier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marier.release.xcconfig"; path = "Target Support Files/Pods-Marier/Pods-Marier.release.xcconfig"; sourceTree = "<group>"; };
@@ -404,10 +408,12 @@
 		76387ED12967E3D800827B3D /* AddImage */ = {
 			isa = PBXGroup;
 			children = (
+				76EC2748297EA9DB00C7D80C /* ValidateImages.swift */,
 				7691FB74296847CC005C38B0 /* ViewModel */,
 				76387EC92967E36C00827B3D /* AddImagesVC.swift */,
 				762B2C3E29796F4B00353724 /* AddImagesVC+Extension.swift */,
-				762B2C4029796FC400353724 /* ValidateImages.swift */,
+				764CC60B297E7A7900839DEF /* CheckImages.swift */,
+				76EC2746297EA59700C7D80C /* ConvertAsset.swift */,
 			);
 			path = AddImage;
 			sourceTree = "<group>";
@@ -865,6 +871,7 @@
 				760D2D4629701B550055C0E9 /* BaseClass.swift in Sources */,
 				762B2C43297A5B5500353724 /* RandomListModel.swift in Sources */,
 				76D8C8262969979D00FE72B5 /* NearbyVM.swift in Sources */,
+				764CC60C297E7A7900839DEF /* CheckImages.swift in Sources */,
 				76387EC22967E30500827B3D /* LandingVC.swift in Sources */,
 				768E0455297AAA17000277E0 /* LocationClass.swift in Sources */,
 				76D8C8282969A2B000FE72B5 /* AllChatVC.swift in Sources */,
@@ -895,8 +902,8 @@
 				7623602B2975618500750F29 /* ChipCollectionCell.swift in Sources */,
 				768E0451297AA145000277E0 /* GetType.swift in Sources */,
 				7600477B2976A5450034935C /* OtpVM.swift in Sources */,
-				762B2C4129796FC400353724 /* ValidateImages.swift in Sources */,
 				762B2C3F29796F4B00353724 /* AddImagesVC+Extension.swift in Sources */,
+				76EC2747297EA59700C7D80C /* ConvertAsset.swift in Sources */,
 				762B99E92977C7A60087F146 /* OtpValidations.swift in Sources */,
 				7638C9CB2966A6D00014AF52 /* ChatTableCell.swift in Sources */,
 				762B99DE2976CAA10087F146 /* SexualOrientation+Extension.swift in Sources */,
@@ -921,6 +928,7 @@
 				76B47057297AB833004F5263 /* OtpRequestModel.swift in Sources */,
 				76D8C81029697DED00FE72B5 /* AddInterestVC.swift in Sources */,
 				76387EC82967E35300827B3D /* SexualOrientationVC.swift in Sources */,
+				76EC2749297EA9DB00C7D80C /* ValidateImages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

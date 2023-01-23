@@ -7,8 +7,12 @@
 
 import Foundation
 import UIKit
+import OpalImagePicker
+import Photos
 
-extension AddImagesVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+
+extension AddImagesVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,OpalImagePickerControllerDelegate{
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if viewModel.arrayData.count > 0{
             return viewModel.arrayData.count
@@ -30,20 +34,26 @@ extension AddImagesVC: UICollectionViewDelegate,UICollectionViewDataSource,UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        openCameraAndPhotos(isEditImage: true) { [self] image, message in
-            print(message)
-           viewModel.arrayData.removeAll()
-            for i in 0...3{
-                print(i)
-                viewModel.arrayData.append(image)
-            }
-          
-            picCollection.reloadData()
-        } failure: { error in
-            print(error)
-        }
+        self.present(picker, animated: true)
 
     }
     
+    func imagePicker(_ picker: OpalImagePickerController, didFinishPickingAssets assets: [PHAsset]) {
+        print(assets)
+        let validationResult = CheckImages().check(images: assets)
+        if validationResult.success{
+            ConvertAsset().toImage(asset: assets){images in
+                self.viewModel.arrayData = images
+                self.picker.dismiss(animated: true)
+                self.picCollection.reloadData()
+            }
+          
+        }else{
+            self.picker.alert(message: validationResult.error)
+        }
+    }
+    func imagePickerDidCancel(_ picker: OpalImagePickerController) {
+        self.picker.dismiss(animated: true)
+    }
     
 }

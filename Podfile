@@ -20,5 +20,5 @@ target 'Marier' do
 	pod 'RangeSeekSlider'
 	pod 'IQKeyboardManagerSwift'
 	pod 'Toast'
-	pod 'ImagePickerController'
+	pod 'OpalImagePicker'
 end

@@ -6,15 +6,24 @@
 //
 
 import UIKit
-
+import OpalImagePicker
+import Photos
 
 class AddImagesVC: BaseClass {
+   
 
     @IBOutlet weak var picCollection: UICollectionView!
     
+    var picker = OpalImagePickerController()
+    var configuration = OpalImagePickerConfiguration()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        picker.imagePickerDelegate = self
+        picker.maximumSelectionsAllowed = 4
+        picker.allowedMediaTypes = Set([PHAssetMediaType.image])
+        configuration.maximumSelectionsAllowedMessage = NSLocalizedString("You can select that only six images!", comment: "")
+        picker.configuration = configuration
     }
     //MARK: - private function/////
     internal lazy var viewModel: AddImageVM = {
