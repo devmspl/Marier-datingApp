@@ -15,16 +15,15 @@ class MatchVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        loadData()
+        mainView.addSubview(viewModel.addSearchView(view: "search").view)
         // Do any additional setup after loading the view.
     }
-    
-    
-    //
-    func loadData(){
+
+    override func viewDidAppear(_ animated: Bool) {
         mainView.addSubview(viewModel.addSearchView(view: "search").view)
     }
+//    
+
     //MARK: - private functions
     private lazy var viewModel: MatchVM = {
         return MatchVM()

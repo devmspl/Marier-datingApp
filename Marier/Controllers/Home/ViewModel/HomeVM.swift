@@ -72,9 +72,9 @@ class HomeVM: NSObject{
                     if url != nil{
                         self.cardData.append(SwipeViewData(image: url!, nameDate: "\(swipeCardData[i].name), \(calculateAge(birthday: swipeCardData[i].dob))", location: swipeCardData[i].sex))
                     }else{
-                        let url = getGalleryImage()
+                        let url = getGalleryImage(index: i)
                         if url != nil{
-                            self.cardData.append(SwipeViewData(image: url, nameDate: swipeCardData[i].name, location: swipeCardData[i].sex))
+                            self.cardData.append(SwipeViewData(image: url, nameDate: "\(swipeCardData[i].name), \(calculateAge(birthday: swipeCardData[i].dob))", location: swipeCardData[i].sex))
                         }else{
                             self.cardData.append(SwipeViewData(image: nil, nameDate:"\(swipeCardData[i].name), \(calculateAge(birthday: swipeCardData[i].dob))", location: swipeCardData[i].sex))
                         }
@@ -87,19 +87,15 @@ class HomeVM: NSObject{
     ///
     ///
 //MARK: - getGalleryImage
-    func getGalleryImage()->URL?{
-        var imageUrl: URL?
-        for i in 0...swipeCardData.count-1{
-            let gallery = swipeCardData[i].gallery
+    func getGalleryImage(index: Int)->URL?{
+            let gallery = swipeCardData[index].gallery
             if gallery.isEmpty{
                 return URL(string: "")
             }else{
-                let img = swipeCardData[i].gallery[0].image
-                imageUrl = URL(string: img)
-                return imageUrl
+                let img = swipeCardData[index].gallery[0].image
+                return URL(string: img)
             }
-        }
-        return imageUrl
+        
     }
     ///
     ///

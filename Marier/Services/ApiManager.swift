@@ -34,7 +34,7 @@ class ApiManager
                 case .success(let data):do{
                     KRProgressHUD.dismiss()
                      let json =  try? JSONDecoder().decode(T.self, from: data!)
-                  
+                    let RSON = try! JSONSerialization.jsonObject(with: data!,options: .mutableContainers) as! [String:Any]
                     let status = response.response?.statusCode
                     if status == 200{
                         completion(json,status!,true,"")

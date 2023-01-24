@@ -8,8 +8,9 @@
 import Foundation
 import Koloda
 import AlamofireImage
+import KRProgressHUD
 import RangeSeekSlider
-
+import Toast
 
 extension HomeVC: KolodaViewDelegate,KolodaViewDataSource{
     
@@ -44,23 +45,23 @@ extension HomeVC: KolodaViewDelegate,KolodaViewDataSource{
         if direction == .left{
             print("userDisliked")
         }else if direction == .right{
+            
             let requestData = LikeData().swipeDirection(likeTo: likeTo, direction: "right")
             viewModel.likeUserApi(requestBody: requestData) { isSuccess, error in
                 if isSuccess{
                     print("userLiked")
                 }else{
-                    self.alert(message: error)
+                    self.view.makeToast(error)
                 }
             }
 
         }else if direction == .up{
             let requestData = LikeData().swipeDirection(likeTo: likeTo, direction: "up")
             viewModel.likeUserApi(requestBody: requestData) { isSuccess, error in
-                
                 if isSuccess{
                     print("userLiked")
                 }else{
-                    self.alert(message: error)
+                    self.view.makeToast(error.capitalized)
                 }
             }
 
