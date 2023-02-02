@@ -18,7 +18,7 @@ struct UserData: Codable {
     let interests: [OrientationAndInterestDataModel?]
     let socialLogin: SocialLogin?
     let setting: UserSettings?
-    let createdAt, updatedAt: String
+    
     let gallery: [UserGallery?]
     
     enum CodingKeys: String,CodingKey{
@@ -28,7 +28,7 @@ struct UserData: Codable {
         case interests
         case socialLogin
         case setting, gallery
-        case createdAt, updatedAt, status, email, name, sex, dob, loc ,id
+        case status, email, name, sex, dob, loc ,id
     }
 }
 

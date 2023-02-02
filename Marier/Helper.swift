@@ -16,7 +16,16 @@ struct storyBoards {
     static let Match = UIStoryboard(name: "Match", bundle: Bundle.main)
     static let TabBar = UIStoryboard(name: "TabBar", bundle: Bundle.main)
 }
+//MARK: - get gallery image
 
+func getGalleryFirstImage(gallery: [UserGallery])->URL?{
+        if gallery.isEmpty{
+            return URL(string: "")
+        }else{
+            let img = gallery[0].image
+            return URL(string: img)
+        }
+}
 //MARK: - purpleButton class//////
 class PurpleButton: UIButton{
     override init(frame: CGRect) {
@@ -53,6 +62,7 @@ class RoundView: UIView{
     private func setup() {
         self.layer.cornerRadius = self.frame.height/2
         self.layer.masksToBounds = true
+        self.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
 }
 
@@ -72,7 +82,7 @@ class GrayBorderView:UIView{
         self.layer.masksToBounds = true
         self.layer.borderColor = UIColor(named: "buttonColor")?.cgColor
         self.layer.borderWidth = 1
-        self.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        self.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
 }
 //MARK: - dashed view////////////
@@ -102,11 +112,10 @@ class DashedView: UIView {
   
 }
 //MARK: - Current time function
-func currentTime() -> String {
+func currentTime(date: String) -> String {
     let date = Date()
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-//    dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+    dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
     dateFormatter.timeZone = TimeZone.current
     dateFormatter.dateFormat = "h:mm a"
     dateFormatter.amSymbol = "AM"

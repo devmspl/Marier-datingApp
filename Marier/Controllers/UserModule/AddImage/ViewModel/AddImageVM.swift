@@ -14,6 +14,7 @@ class AddImageVM: NSObject {
     func uploadImageApi(completion:@escaping(Bool,String)->()){
       
             ApiManager.shared.uploadImages(
+                requestUrl: ApiUrls.uploadGalleryImages,
                 images: arrayData,
                         progress: { [weak self] percent in
                            guard let _ = self else {

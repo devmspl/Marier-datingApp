@@ -34,7 +34,7 @@ class ApiManager
                 case .success(let data):do{
                     KRProgressHUD.dismiss()
                      let json =  try? JSONDecoder().decode(T.self, from: data!)
-                    let RSON = try! JSONSerialization.jsonObject(with: data!,options: .mutableContainers) as! [String:Any]
+        
                     let status = response.response?.statusCode
                     if status == 200{
                         completion(json,status!,true,"")
@@ -128,7 +128,7 @@ class ApiManager
     ///
     ///
     //MARK: - upload imagesApi
-    func uploadImages(images: [UIImage],progress:@escaping(_ percent:Float)->(),completion:@escaping(_ result: Bool,_ message: String)->()){
+    func uploadImages(requestUrl: String,images: [UIImage],progress:@escaping(_ percent:Float)->(),completion:@escaping(_ result: Bool,_ message: String)->()){
         
              let randomno = Int.random(in: 1000...100000)
              let imgFileName = "image\(randomno).jpg"
@@ -142,7 +142,7 @@ class ApiManager
                                                              mimeType: "image/jpeg")
                                                
                                               }
-        }, to: ApiUrls.ulpoadGalleryImages+getUserId(), usingThreshold: UInt64.init(), method: .put).uploadProgress { process in
+        }, to: requestUrl+getUserId(), usingThreshold: UInt64.init(), method: .put).uploadProgress { process in
             progress(Float(process.fractionCompleted))
         }.response { response in
             debugPrint(response)

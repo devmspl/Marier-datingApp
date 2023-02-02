@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -77,6 +78,12 @@
                     <constraint firstAttribute="trailing" secondItem="gJQ-2K-g5X" secondAttribute="trailing" id="jVq-tf-P3N"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="lastMessage" destination="JnA-sD-12f" id="m4d-Bc-eRH"/>
+                <outlet property="name" destination="ohd-I7-a6T" id="aV0-Ck-YGq"/>
+                <outlet property="newMessageCount" destination="fq5-3L-TSk" id="jQO-qE-JWz"/>
+                <outlet property="userImage" destination="tCW-ya-wCe" id="vqh-Rp-43u"/>
+            </connections>
             <point key="canvasLocation" x="-33.076923076923073" y="-48.341232227488149"/>
         </tableViewCell>
     </objects>

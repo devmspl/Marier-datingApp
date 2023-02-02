@@ -10,11 +10,11 @@ import Foundation
 struct OrientationAndInterestDataModel:Codable {
     let id, type: String
     let isDeleted: Bool
-    let createdAt, updatedAt: String
+   
     
     enum CodingKeys: String,CodingKey{
         case id = "_id"
-        case type,createdAt,updatedAt
+        case type
         case isDeleted = "is_deleted"
     }
 }

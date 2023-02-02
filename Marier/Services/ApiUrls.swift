@@ -26,7 +26,9 @@ struct ApiUrls{
     ///
     public static var addInterest               = baseUrl + "users/addIntersts/"
     ///
-    public static var ulpoadGalleryImages       = baseUrl + "users/uploadImagesByUserId/"
+    public static var uploadGalleryImages       = baseUrl + "users/uploadImagesByUserId/"
+    ///
+    public static var uploadUserProfilePic      = baseUrl + "users/profileImageUpload/"
     ///
     public static var getCurrentUser            = baseUrl + "users/current/"
     ///
@@ -38,5 +40,7 @@ struct ApiUrls{
     public static var getAll                    = baseUrl + "users/getAll"
     public static var getRandomList             = baseUrl + "users/randomList/"
     public static var likeUser                  = baseUrl + "likes/create"
+//MARK: - like screen api endpoints
+    public static var getUsersLike              = baseUrl + "likes/likesByOther/"
     
 }

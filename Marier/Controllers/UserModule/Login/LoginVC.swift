@@ -11,13 +11,15 @@ class LoginVC: UIViewController {
 
     
     @IBOutlet weak var numberField: UITextField!
-    @IBOutlet weak var coutryCodeView: UIView!
     @IBOutlet weak var countryText: UILabel!
+    
+    @IBOutlet weak var countryPickerView: UIView!
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
     
@@ -44,7 +46,8 @@ class LoginVC: UIViewController {
         self.poptoViewController()
     }
     @IBAction func countryPick(_ sender: UIButton){
-        
+       
+        viewModel.pickCountry(View: self, label: countryText)
     }
-
+    
 }

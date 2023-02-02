@@ -48,7 +48,6 @@ class OTPVC: UIViewController {
                             self.alert(message: error)
                         }
                     }
-                  
                 }else{
                     self.alert(message: error)
                 }

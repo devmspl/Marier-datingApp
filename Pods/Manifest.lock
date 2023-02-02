@@ -1,4 +1,5 @@
 PODS:
+  - ADCountryPicker (2.1.0)
   - Alamofire (5.6.4)
   - AlamofireImage (4.2.0):
     - Alamofire (~> 5.4)
@@ -84,12 +85,25 @@ PODS:
   - MDFTextAccessibility (2.0.1)
   - OpalImagePicker (3.0.0)
   - OTPTextField (1.1.5)
+  - PageControls (1.0.1):
+    - PageControls/FilledPageControl (= 1.0.1)
+    - PageControls/PillPageControl (= 1.0.1)
+    - PageControls/ScrollingPageControl (= 1.0.1)
+    - PageControls/SnakePageControl (= 1.0.1)
+  - PageControls/FilledPageControl (1.0.1)
+  - PageControls/PillPageControl (1.0.1)
+  - PageControls/ScrollingPageControl (1.0.1)
+  - PageControls/SnakePageControl (1.0.1)
   - pop (1.0.12)
   - RangeSeekSlider (1.8.0)
+  - Socket.IO-Client-Swift (16.0.1):
+    - Starscream (~> 4.0)
+  - Starscream (4.0.4)
   - SwiftyJSON (5.0.1)
   - Toast (4.0.0)
 
 DEPENDENCIES:
+  - ADCountryPicker
   - Alamofire
   - AlamofireImage
   - AlignedCollectionViewFlowLayout
@@ -101,12 +115,15 @@ DEPENDENCIES:
   - MaterialComponents/Chips
   - OpalImagePicker
   - OTPTextField
+  - PageControls
   - RangeSeekSlider
+  - Socket.IO-Client-Swift
   - SwiftyJSON
   - Toast
 
 SPEC REPOS:
   trunk:
+    - ADCountryPicker
     - Alamofire
     - AlamofireImage
     - AlignedCollectionViewFlowLayout
@@ -121,12 +138,16 @@ SPEC REPOS:
     - MDFTextAccessibility
     - OpalImagePicker
     - OTPTextField
+    - PageControls
     - pop
     - RangeSeekSlider
+    - Socket.IO-Client-Swift
+    - Starscream
     - SwiftyJSON
     - Toast
 
 SPEC CHECKSUMS:
+  ADCountryPicker: 502cee76a30ea1c3834eb0df170ce635691655c9
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
   AlignedCollectionViewFlowLayout: ee2ef451e741ec08f8e0967d828001e2f051c20a
@@ -141,11 +162,14 @@ SPEC CHECKSUMS:
   MDFTextAccessibility: f4bb4cc2194286651b59a215fdeaa0e05dc90ba5
   OpalImagePicker: 38e772dd93a54431fc516b33e1f337c50f745834
   OTPTextField: 9d35010a6356972471298aea37bf8d6d5f9974f7
+  PageControls: fc2436c93e79419521a6de5d46d84722593e2949
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
+  Socket.IO-Client-Swift: c116d6dc9fd6be9c259bacfe143f8725bce7d79e
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 85a77820d1f3f578e74dacbd0a81724e2d61bceb
+PODFILE CHECKSUM: 64d08ab5c40b20f6c509670ea6362e1fa6bbaf5f
 
 COCOAPODS: 1.11.3

@@ -47,7 +47,12 @@ class SignUpVC: UIViewController {
     
     @IBAction func signUp(_ sender: UIButton){
         let location = Location(type: "Point", coordinates: [75.75,74.5])
-        let request = SignUpModel(name: fullName.text ?? "", phoneNumber: phoneNumber.text ?? "", sex: gender.text?.lowercased() ?? "", dob: dateOfBirth.text ?? "", location: location, address: address.text ?? "")
+        let request = SignUpModel(name: fullName.text ?? "",
+                                  phoneNumber: phoneNumber.text ?? "",
+                                  sex: gender.text?.lowercased() ?? "",
+                                  dob: dateOfBirth.text ?? "",
+                                  location: location,
+                                  address: address.text ?? "")
         
             viewModel.apiCall(requestData: request, completion: { isSuccess, error in
                if isSuccess{

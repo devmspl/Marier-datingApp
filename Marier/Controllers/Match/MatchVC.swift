@@ -15,14 +15,14 @@ class MatchVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainView.addSubview(viewModel.addSearchView(view: "search").view)
         // Do any additional setup after loading the view.
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        mainView.addSubview(viewModel.addSearchView(view: "search").view)
+        Container().addController(type: "likes", mainController: self, containerView: mainView)
+        searchButton.setTitleColor(UIColor.black, for: .normal)
+        nearbyButton.setTitleColor(UIColor.gray, for: .normal)
     }
-//    
 
     //MARK: - private functions
     private lazy var viewModel: MatchVM = {
@@ -32,13 +32,13 @@ class MatchVC: UIViewController {
     @IBAction func searchTapped(_ sender: UIButton){
         searchButton.setTitleColor(UIColor.black, for: .normal)
         nearbyButton.setTitleColor(UIColor.gray, for: .normal)
-        mainView.addSubview(viewModel.addSearchView(view: "search").view)
-//        myView.addSubview(myViewController.view)
+        Container().addController(type: "likes", mainController: self, containerView: mainView)
     }
     @IBAction func nearbyTapped(_ sender: UIButton){
         searchButton.setTitleColor(UIColor.gray, for: .normal)
         nearbyButton.setTitleColor(UIColor.black, for: .normal)
-        mainView.addSubview(viewModel.addSearchView(view: "nearby").view)
+        Container().addController(type: "nearby", mainController: self, containerView: mainView)
+        
     }
    
 }

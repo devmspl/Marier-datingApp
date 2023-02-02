@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import ADCountryPicker
 
 class LoginVM: NSObject {
+    
+    var countryPicked = ""
+    var picker = ADCountryPicker()
     
     func loginApi(requestData: LoginModel,completion: @escaping(Bool,String)->()){
         
@@ -27,5 +31,24 @@ class LoginVM: NSObject {
         }else{
             completion(false,validationResult.error)
         }
+    }    
+}
+
+extension LoginVM: ADCountryPickerDelegate{
+    func pickCountry(View:UIViewController,label: UILabel){
+        picker.delegate = self
+        View.present(picker, animated: true)
+        picker.didSelectCountryClosure = { [self] name, code in
+            let dialCode = picker.getDialCode(countryCode: code)
+            label.text = "\(code) \(dialCode ?? "+91")"
+            picker.dismiss(animated: true)
+            
+        }
     }
+    
+    func countryPicker(_ picker: ADCountryPicker, didSelectCountryWithName name: String, code: String, dialCode: String) {
+        print("hcvg")
+    }
+    
+   
 }

@@ -12,31 +12,43 @@ class SearchVC: UIViewController {
     
     @IBOutlet weak var searchCollection: UICollectionView!
     
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchCollection.reloadData()
+        getData()
     }
-   //MARK: - private functions
+    
+//MARK: - private functions
     private lazy var viewModel: SearchVM = {
         return SearchVM()
     }()
-
+    
+    func getData(){
+        viewModel.getLikeUsers { [self] isSuccess, error in
+            if isSuccess{
+                searchCollection.reloadData()
+            }else{
+                alert(message: error)
+            }
+        }
+    }
 
 }
 
 extension SearchVC: UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.dataArray.count
+        return viewModel.likeUsers.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = searchCollection.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SearchCollectionViewCell
-        cell.cellImage.image = viewModel.dataArray[indexPath.item]
+        cell.config(cellData:viewModel.likeUsers[indexPath.item].likeBy)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: searchCollection.frame.width/2.1, height: searchCollection.frame.height/4)
+        return CGSize(width: searchCollection.frame.width/2, height: searchCollection.frame.height/3)
     }
 
 }

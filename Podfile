@@ -21,4 +21,7 @@ target 'Marier' do
 	pod 'IQKeyboardManagerSwift'
 	pod 'Toast'
 	pod 'OpalImagePicker'
+	pod 'PageControls'
+	pod 'Socket.IO-Client-Swift'
+	pod 'ADCountryPicker'
 end

@@ -23,4 +23,9 @@ class ChatTableRightCell: UITableViewCell {
 
     }
     
+    func cellConfig(data:getMessageModel){
+        msgLabel.text = data.content
+        timeLabel.text = data.date
+    }
+    
 }

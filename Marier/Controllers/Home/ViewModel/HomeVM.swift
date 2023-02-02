@@ -72,7 +72,7 @@ class HomeVM: NSObject{
                     if url != nil{
                         self.cardData.append(SwipeViewData(image: url!, nameDate: "\(swipeCardData[i].name), \(calculateAge(birthday: swipeCardData[i].dob))", location: swipeCardData[i].sex))
                     }else{
-                        let url = getGalleryImage(index: i)
+                        let url = getGalleryFirstImage(gallery: swipeCardData[i].gallery)
                         if url != nil{
                             self.cardData.append(SwipeViewData(image: url, nameDate: "\(swipeCardData[i].name), \(calculateAge(birthday: swipeCardData[i].dob))", location: swipeCardData[i].sex))
                         }else{
@@ -87,16 +87,7 @@ class HomeVM: NSObject{
     ///
     ///
 //MARK: - getGalleryImage
-    func getGalleryImage(index: Int)->URL?{
-            let gallery = swipeCardData[index].gallery
-            if gallery.isEmpty{
-                return URL(string: "")
-            }else{
-                let img = swipeCardData[index].gallery[0].image
-                return URL(string: img)
-            }
-        
-    }
+ 
     ///
     ///
     ///

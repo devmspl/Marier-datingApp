@@ -8,5 +8,11 @@
 import Foundation
 
 struct EditProfileModel: Codable{
-    let name: String
+    var name: String
+    var dob: String
+    var location: Location
+    var language: String
+    var showMe: String
+    var ageRange: AgeRange
+    var distance: Int
 }

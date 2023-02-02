@@ -9,8 +9,14 @@ import UIKit
 
 class ChatTableLeftCell: UITableViewCell {
 
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var messageText: UILabel!
+    @IBOutlet weak var messageTime: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        userImage.layer.cornerRadius = userImage.frame.height/2
+        userImage.contentMode = .scaleAspectFill
         // Initialization code
     }
 
@@ -20,4 +26,9 @@ class ChatTableLeftCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func cellConfig(config: getMessageModel){
+        messageText.text = config.content
+        messageTime.text = config.date
+        
+    }
 }

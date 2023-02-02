@@ -73,7 +73,9 @@ extension HomeVC: KolodaViewDelegate,KolodaViewDataSource{
     }
     //DidSelect
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-        print("selected")
+        let vc = storyBoards.Profile.instantiateViewController(withIdentifier: "OtherUserProfileVC") as! OtherUserProfileVC
+        vc.id = viewModel.swipeCardData[index].id
+        self.pushVC(controller: vc)
     }
     
 }

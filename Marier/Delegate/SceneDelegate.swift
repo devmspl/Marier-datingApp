@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SocketIO
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = nav
             window?.makeKeyAndVisible()
         }else{
+            socket.connect()
             Navigation().getUserDataAndNavigate { isSuccess, navigate, error in
                 self.window?.rootViewController = navigate
                 self.window?.makeKeyAndVisible()
