@@ -15,15 +15,12 @@ class AllChatVM: NSObject{
     var chatData = [GetChatUserModel]()
     
     func connectSocket(table: UITableView){
-        socket.connect()
-        DispatchQueue.main.asyncAfter(deadline: .now()+3.0){ [self] in
             socket.emit("join-user", getUserId())
             socket.on("get-room-stack") { [self] data, ack in
                     print("sdfghj",data,"sdfghj")
                chatData = getUsers(data: data)
                 table.reloadData()
                 }
-        }
     }
 //MARK: - get userChatData
     func getUsers(data: [Any?])->[GetChatUserModel]{

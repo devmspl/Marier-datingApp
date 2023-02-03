@@ -16,6 +16,10 @@ extension ChatInboxVC: UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         changeBtnColor()
     }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        changeBtnColor()
+        return true
+    }
     func changeBtnColor() {
         if typeMessage.text == ""{
             sendBtn.backgroundColor = .gray

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SocketIO
 class BottomBar: UITabBarController {
 
     override func viewDidLoad() {
@@ -15,7 +15,8 @@ class BottomBar: UITabBarController {
         // Do any additional setup after loading the view.
     }
     
-
+   
+    
     /*
     // MARK: - Navigation
 

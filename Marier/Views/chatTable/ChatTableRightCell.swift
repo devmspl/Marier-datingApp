@@ -10,6 +10,7 @@ import UIKit
 class ChatTableRightCell: UITableViewCell {
 
     
+    @IBOutlet weak var timeHeight: NSLayoutConstraint!
     @IBOutlet weak var msgLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
@@ -25,7 +26,11 @@ class ChatTableRightCell: UITableViewCell {
     
     func cellConfig(data:getMessageModel){
         msgLabel.text = data.content
-        timeLabel.text = data.date
+        timeLabel.isHidden = true
+        if timeLabel.isHidden{
+            timeHeight.constant = 0
+        }
+        timeLabel.text = messagesTime(dateTo: data.date ?? "")
     }
     
 }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -22,16 +23,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="327" height="76"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPN-Eo-Iun">
-                                <rect key="frame" x="131" y="2" width="65" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="137" y="1" width="53.333333333333343" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="u05-fC-Ael"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" name="buttonColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwG-s1-9OF">
-                                <rect key="frame" x="268.66666666666669" y="23" width="53.333333333333314" height="48"/>
+                                <rect key="frame" x="268.66666666666669" y="20" width="53.333333333333314" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m30-TG-PHg">
-                                        <rect key="frame" x="8" y="6" width="37.333333333333336" height="36"/>
+                                        <rect key="frame" x="8" y="6" width="37.333333333333336" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -54,10 +58,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="UPN-Eo-Iun" firstAttribute="top" secondItem="scx-zS-DN0" secondAttribute="top" constant="2" id="35C-7U-XaT"/>
+                            <constraint firstItem="UPN-Eo-Iun" firstAttribute="top" secondItem="scx-zS-DN0" secondAttribute="top" constant="1" id="35C-7U-XaT"/>
                             <constraint firstItem="GwG-s1-9OF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="scx-zS-DN0" secondAttribute="leading" constant="60" id="bOF-gi-gMd"/>
-                            <constraint firstItem="GwG-s1-9OF" firstAttribute="top" secondItem="UPN-Eo-Iun" secondAttribute="bottom" constant="3" id="e4r-Jb-1YR"/>
-                            <constraint firstAttribute="bottom" secondItem="GwG-s1-9OF" secondAttribute="bottom" constant="5" id="eK4-UB-uA4"/>
+                            <constraint firstItem="GwG-s1-9OF" firstAttribute="top" secondItem="UPN-Eo-Iun" secondAttribute="bottom" constant="1" id="e4r-Jb-1YR"/>
+                            <constraint firstAttribute="bottom" secondItem="GwG-s1-9OF" secondAttribute="bottom" id="eK4-UB-uA4"/>
                             <constraint firstAttribute="trailing" secondItem="GwG-s1-9OF" secondAttribute="trailing" constant="5" id="fTo-iV-Dhb"/>
                             <constraint firstItem="UPN-Eo-Iun" firstAttribute="centerX" secondItem="scx-zS-DN0" secondAttribute="centerX" id="zLp-OK-VUE"/>
                         </constraints>
@@ -73,6 +77,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="msgLabel" destination="m30-TG-PHg" id="qvp-G6-HPa"/>
+                <outlet property="timeHeight" destination="u05-fC-Ael" id="xF9-zq-dua"/>
                 <outlet property="timeLabel" destination="UPN-Eo-Iun" id="yNH-TI-fr6"/>
             </connections>
             <point key="canvasLocation" x="39.230769230769226" y="31.990521327014218"/>

@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+//MARK: -date format
+let dateFormat = "yyyy-MM-dd'T'HH:mm:ss.sss'Z'"
 //MARK: - Storyboards
 struct storyBoards {
     static let Main = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -112,16 +114,76 @@ class DashedView: UIView {
   
 }
 //MARK: - Current time function
-func currentTime(date: String) -> String {
-    let date = Date()
+func messagesTime(dateTo:String) -> String {
+    let dateToconvert = getCalenderDateFromString(aDate:dateTo)
+  
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+//    dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
     dateFormatter.timeZone = TimeZone.current
     dateFormatter.dateFormat = "h:mm a"
     dateFormatter.amSymbol = "AM"
     dateFormatter.pmSymbol = "PM"
-    return dateFormatter.string(from: date)
+    return dateFormatter.string(from: dateToconvert)
 }
+
+
+
+//MARK: - getCalenderDateFromString//////
+func getCalenderDateFromString(aDate : String) -> Date
+{
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    formatter.timeZone = TimeZone(abbreviation: "UTC")
+
+    return formatter.date(from: aDate)!
+}
+
+func getUTCDateFromString(aDate : String , aDateFormate : String) -> Date
+{
+    //    let date = Date()
+    let formatter = DateFormatter()
+    formatter.dateFormat = aDateFormate
+    formatter.timeZone = TimeZone(abbreviation: "UTC")
+    return formatter.date(from: aDate)!
+}
+
+//MARK: - getCurrentDateInString//////
+func getCurrentDateInString() -> String
+{
+    let date = Date()
+    let formatter = DateFormatter()
+    formatter.dateFormat = dateFormat
+    formatter.timeZone = TimeZone(abbreviation: "UTC")
+    return formatter.string(from:date)
+}
+//MARK: - getCalenderDateInString//////
+func getCalenderDateInString(aDateFormate : String) -> String
+{
+    let date = Date()
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    formatter.timeZone = TimeZone(abbreviation: "UTC")
+    return formatter.string(from:date)
+}
+//MARK: - UTCToLocalDateFormat//////
+func UTCToLocalDateFormat(date: String) -> String {
+   
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.sss'Z'"
+    dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+    
+    let dt = dateFormatter.date(from: date)
+    dateFormatter.timeZone = TimeZone.current
+//    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    var str = ""
+    if dt != nil
+    {
+        str = dateFormatter.string(from: dt!)
+    }
+    return str
+}
+
 
 
 //MARK: - calculate age of user

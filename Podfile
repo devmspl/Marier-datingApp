@@ -10,6 +10,7 @@ target 'Marier' do
 	pod 'MaterialComponents/Chips'
   	pod 'AlignedCollectionViewFlowLayout'
 	pod 'Alamofire'
+  	pod 'IQKeyboardManagerSwift'
 	pod 'AlamofireImage'
 	pod 'OTPTextField'
 	pod 'KRProgressHUD'

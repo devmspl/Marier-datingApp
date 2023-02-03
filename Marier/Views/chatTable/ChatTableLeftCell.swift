@@ -9,6 +9,7 @@ import UIKit
 
 class ChatTableLeftCell: UITableViewCell {
 
+    @IBOutlet weak var timeHeight: NSLayoutConstraint!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var messageText: UILabel!
     @IBOutlet weak var messageTime: UILabel!
@@ -28,7 +29,11 @@ class ChatTableLeftCell: UITableViewCell {
     
     func cellConfig(config: getMessageModel){
         messageText.text = config.content
-        messageTime.text = config.date
+        messageTime.isHidden = true
+        if messageTime.isHidden{
+            timeHeight.constant = 0
+        }
+        messageTime.text = messagesTime(dateTo: config.date ?? "")
         
     }
 }

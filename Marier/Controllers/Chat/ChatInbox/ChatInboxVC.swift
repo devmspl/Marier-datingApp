@@ -25,13 +25,19 @@ class ChatInboxVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadViews()
+        chatInboxTable.keyboardDismissMode = .interactive
         typeMessage.delegate = self
     }
     //////////////////////
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.setRoom(receiver: otherUserId)
-        viewModel.getChat(roomId: roomId,reloadTable: chatInboxTable)
+            viewModel.setRoom(receiver: otherUserId)
+            viewModel.getChat(roomId: roomId,reloadTable: chatInboxTable)
+       
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.scrollToBottom(table: chatInboxTable)
     }
     ///
     func loadViews() {
@@ -62,24 +68,21 @@ class ChatInboxVC: UIViewController {
     }
     
     @IBAction func sendMessagge(_ sender: UIButton){
-        
-        let messagePayload: [String:Any] = ["senderId":getUserId(),
-                              "receiverId":otherUserId,
-                              "roomId":roomId,
-                              "content": typeMessage.text,
-                              "date":"\(Date())",
-                             ]
-        viewModel.getChat(roomId: roomId,reloadTable: chatInboxTable)
-        if typeMessage.text == ""{
-            print("hello")
-        }else{
-//            viewModel.arrMessage.append(messagePayload)
-            
+        if typeMessage.text != ""{
+          
+            let messagePayload: [String:Any] = ["senderId":getUserId(),
+                                                "receiverId":otherUserId,
+                                                "roomId":roomId,
+                                                "content": typeMessage.text ,
+                                                "date":getCurrentDateInString(),
+            ]
             socket.emit("chat-msg", messagePayload)
-         
-            socket.on("chat-msg"){da,md in
-                print(da,md,"s")
-            }
+            chatInboxTable.reloadData()
+            viewModel.scrollToBottom(table: chatInboxTable)
+            typeMessage.text = ""
+            
+            
+ 
         }
     }
 }

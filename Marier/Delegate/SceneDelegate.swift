@@ -7,12 +7,16 @@
 
 import UIKit
 import SocketIO
+import IQKeyboardManagerSwift
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-       
+           IQKeyboardManager.shared.enable = true
+           IQKeyboardManager.shared.enableAutoToolbar = false
+           IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+           IQKeyboardManager.shared.resignFirstResponder()
         let vc = storyBoards.Main.instantiateViewController(withIdentifier: "LandingVC") as! LandingVC
         let nav = UINavigationController(rootViewController: vc)
         nav.isNavigationBarHidden = true

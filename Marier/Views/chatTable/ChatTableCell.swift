@@ -30,10 +30,10 @@ class ChatTableCell: UITableViewCell {
     func cellConfig(data: GetChatUserModel){
         name.text = data.user?.name
         lastMessage.text = data.messages?.lastMessage?.content
-        let messageCount = data.messages?.newMessage?.count 
+        let messageCount = data.messages?.newMessage?.count
         if messageCount != nil{
             newMessageCount.setTitle("\(messageCount ?? 0)", for: .normal)
-            newMessageCount.isHidden = false
+            newMessageCount.isHidden = true
         }else{
             newMessageCount.isHidden = true
         }
