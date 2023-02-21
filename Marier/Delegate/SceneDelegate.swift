@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
            IQKeyboardManager.shared.enableAutoToolbar = false
            IQKeyboardManager.shared.shouldResignOnTouchOutside = true
            IQKeyboardManager.shared.resignFirstResponder()
+        
         let vc = storyBoards.Main.instantiateViewController(withIdentifier: "LandingVC") as! LandingVC
         let nav = UINavigationController(rootViewController: vc)
         nav.isNavigationBarHidden = true

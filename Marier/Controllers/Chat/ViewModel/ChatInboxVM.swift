@@ -11,17 +11,21 @@ import SocketIO
 class ChatInboxVM: NSObject {
     
     var arrMessage = [getMessageModel]()
-    
+    var roomid = ""
     //getchart
     func getChat(roomId: String,reloadTable: UITableView){
-        socket.emit("get-chat",[
-        "roomId":roomId,
-        "userId":getUserId(),
-        "pageSize":1000,
-        "pageNo":1
-        ])
-        currentMessage(table: reloadTable)
-        chat(table: reloadTable)
+        
+      
+            socket.emit("get-chat",[
+            "roomId":roomId,
+            "userId":getUserId(),
+            "pageSize":1000,
+            "pageNo":1
+            ])
+            currentMessage(table: reloadTable)
+            chat(table: reloadTable)
+        
+       
     }
     //append chat
     func chat(table:UITableView){
@@ -43,11 +47,18 @@ class ChatInboxVM: NSObject {
         }
     }
     //setRoom
-    func setRoom(receiver: String){
-       socket.emit("set-room",["sender":getUserId(),"receiver":receiver]);
+    func setRoom(receiver: String,reloadTable:UITableView){
+       socket.emit("set-room",["sender":getUserId(),"receiver":receiver])
+        socket.on("set-room"){[self] data,arg  in
+            roomid = "\(data[0])"
+            getChat(roomId: "\(data[0])", reloadTable: reloadTable)
+        }
+        print("hello")
+        
     }
   //getusers
     func getUsers(data: [Any?])->[getMessageModel]{
+        arrMessage.removeAll()
         if !(data.isEmpty){
             let metaData = data[0]
             let convertedData = try! JSONSerialization.data(withJSONObject: metaData)
@@ -64,6 +75,19 @@ class ChatInboxVM: NSObject {
         }else{
             return arrMessage
         }
+    }
+    
+    func sendMessage(receiver: String,content: String,table:UITableView){
+        let messagePayload: [String:Any] = ["senderId":getUserId(),
+                                            "receiverId":receiver,
+                                            "roomId":roomid,
+                                            "content": content ,
+                                            "date":getCurrentDateInString(),
+        ]
+        socket.emit("chat-msg", messagePayload)
+        table.reloadData()
+        scrollToBottom(table: table)
+      
     }
     
     func scrollToBottom(table:UITableView){

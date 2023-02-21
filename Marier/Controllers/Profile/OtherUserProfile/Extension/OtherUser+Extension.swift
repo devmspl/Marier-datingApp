@@ -21,8 +21,8 @@ extension OtherUserProfileVC: UICollectionViewDelegate,UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == imageCollection{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImagesCollectionCell", for: indexPath) as! ImagesCollectionCell
-            cell.config(data: viewModel.userData!.gallery )
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! GalleryImage
+            cell.cellConfig(data: viewModel.userData!.gallery[indexPath.row]! )
             return cell
         }else if collectionView == interestCollection{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChipCollectionCell", for: indexPath) as! ChipCollectionCell
@@ -48,13 +48,17 @@ extension OtherUserProfileVC: UICollectionViewDelegate,UICollectionViewDataSourc
         }
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        self.pageControlV.currentPage = indexPath.section
+        if collectionView == imageCollection{
+            self.pageControlV.currentPage = indexPath.section
+        }
+        
     }
+    
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offSet = scrollView.contentOffset.x
         let width = scrollView.frame.width
         let horizontalCenter = width / 2
-
         pageControlV.currentPage = Int(offSet + horizontalCenter) / Int(width)
     }
    

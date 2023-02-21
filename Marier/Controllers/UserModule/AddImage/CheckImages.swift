@@ -13,8 +13,8 @@ struct CheckImages{
     func check(images:[PHAsset])->validateFields{
         if images.isEmpty{
             return validateFields(success: false, error: "Please select images")
-        }else if images.count < 4{
-            return validateFields(success: false, error: "Please select atleast 4 images")
+        }else if images.count < 2{
+            return validateFields(success: false, error: "Please select atleast 2 images")
         }else if images.count > 4{
             return validateFields(success: false, error: "You can only select upto four images")
         }else{

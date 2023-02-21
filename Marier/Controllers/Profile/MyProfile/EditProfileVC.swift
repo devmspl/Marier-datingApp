@@ -63,7 +63,7 @@ class EditProfileVC: UIViewController {
     
     func getData(){
         name.text = userData?.name
-        dob.text = userData?.dob
+        dob.text = getDob(aDate: userData?.dob ?? "")
 //        locationBtn.setTitle(userData?.setting?.location, for: .normal)
         languageBtn.setTitle(userData?.setting?.language.capitalized, for: .normal)
         showMeBtn.setTitle(userData?.setting?.sexType.capitalized, for: .normal)

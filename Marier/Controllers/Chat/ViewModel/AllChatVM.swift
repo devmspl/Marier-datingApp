@@ -13,13 +13,21 @@ import SwiftyJSON
 class AllChatVM: NSObject{
     
     var chatData = [GetChatUserModel]()
-    
+///
     func connectSocket(table: UITableView){
+        table.isHidden = true
             socket.emit("join-user", getUserId())
             socket.on("get-room-stack") { [self] data, ack in
                     print("sdfghj",data,"sdfghj")
                chatData = getUsers(data: data)
-                table.reloadData()
+              
+                if chatData.isEmpty{
+                    table.isHidden = true
+                }else{
+                    table.isHidden = false
+                    table.reloadData()
+                }
+                    table.reloadData()
                 }
     }
 //MARK: - get userChatData

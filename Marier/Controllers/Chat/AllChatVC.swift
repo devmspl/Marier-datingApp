@@ -6,22 +6,24 @@
 //
 
 import UIKit
-import SocketIO
 
 class AllChatVC: UIViewController {
 
+    @IBOutlet weak var emptyInbox: UIImageView!
     @IBOutlet weak var chatTable: UITableView!
+    
+    private var image = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+
     // Do any additional setup after loading the view.
     }
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.connectSocket(table: chatTable)
-        
     }
     
     //MARK: - privateFunctions
@@ -32,8 +34,6 @@ class AllChatVC: UIViewController {
     func loadData(){
       
         chatTable.register(UINib(nibName: "chatTableCell", bundle: nil), forCellReuseIdentifier: "ChatTableCell")
-
-       
     }
 
 }

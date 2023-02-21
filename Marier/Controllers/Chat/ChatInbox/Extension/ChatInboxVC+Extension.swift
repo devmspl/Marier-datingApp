@@ -8,25 +8,20 @@
 import Foundation
 import UIKit
 
-extension ChatInboxVC: UITextFieldDelegate{
+extension ChatInboxVC: UITextViewDelegate{
    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textViewDidChange(_ textView: UITextView) {
+       self.messageHeight.constant = textView.contentSize.height
+       self.view.layoutIfNeeded()
         changeBtnColor()
     }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        changeBtnColor()
-    }
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        changeBtnColor()
-        return true
-    }
+    
     func changeBtnColor() {
-        if typeMessage.text == ""{
+        if messageText.text == ""{
             sendBtn.backgroundColor = .gray
         }else{
             sendBtn.backgroundColor = UIColor(named: "upperGradientColor")
         }
-        
     }
 }
 extension ChatInboxVC: UITableViewDelegate,UITableViewDataSource{

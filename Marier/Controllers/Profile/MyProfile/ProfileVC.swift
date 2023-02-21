@@ -51,7 +51,7 @@ class ProfileVC: BaseClass {
     }
     ///
     func setData(){
-        self.dateOfBirth.text = userData?.dob
+        self.dateOfBirth.text = getDob(aDate: userData?.dob ?? "")
         self.currentPlan.text = "Current Plan(Free)"
         self.nameLabel.text = userData?.name
         self.name.text = userData?.name

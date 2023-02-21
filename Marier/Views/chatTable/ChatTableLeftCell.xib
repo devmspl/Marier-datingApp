@@ -40,7 +40,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" name="upperGradientColor"/>
+                                <color key="backgroundColor" name="buttonColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Pc4-H9-KQO" secondAttribute="bottom" constant="6" id="Eg0-dx-deX"/>
                                     <constraint firstItem="Pc4-H9-KQO" firstAttribute="top" secondItem="4Qs-v2-qCl" secondAttribute="top" constant="6" id="KDE-ZN-hEo"/>
@@ -94,9 +94,6 @@
     <resources>
         <namedColor name="buttonColor">
             <color red="0.66699999570846558" green="0.66699999570846558" blue="0.66699999570846558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="upperGradientColor">
-            <color red="0.46299999952316284" green="0.17599999904632568" blue="0.76899999380111694" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

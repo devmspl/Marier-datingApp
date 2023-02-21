@@ -138,7 +138,16 @@ func getCalenderDateFromString(aDate : String) -> Date
 
     return formatter.date(from: aDate)!
 }
+//MARK: - getDateofbirth
 
+func getDob(aDate:String)->String{
+   let date = getCalenderDateFromString(aDate: aDate)
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    dateFormatter.timeZone = TimeZone.current
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    return dateFormatter.string(from: date)
+}
 func getUTCDateFromString(aDate : String , aDateFormate : String) -> Date
 {
     //    let date = Date()

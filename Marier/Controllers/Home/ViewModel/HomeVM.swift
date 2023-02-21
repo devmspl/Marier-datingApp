@@ -70,13 +70,13 @@ class HomeVM: NSObject{
                 if let img = swipeCardData[i].avatar as? String{
                     let url = URL(string: img)
                     if url != nil{
-                        self.cardData.append(SwipeViewData(image: url!, nameDate: "\(swipeCardData[i].name), \(calculateAge(birthday: swipeCardData[i].dob))", location: swipeCardData[i].sex))
+                        self.cardData.append(SwipeViewData(image: url!, nameDate: "\(swipeCardData[i].name), \(calculateAge(birthday: swipeCardData[i].dob))", location: swipeCardData[i].sex.capitalized))
                     }else{
                         let url = getGalleryFirstImage(gallery: swipeCardData[i].gallery)
                         if url != nil{
-                            self.cardData.append(SwipeViewData(image: url, nameDate: "\(swipeCardData[i].name), \(calculateAge(birthday: swipeCardData[i].dob))", location: swipeCardData[i].sex))
+                            self.cardData.append(SwipeViewData(image: url, nameDate: "\(swipeCardData[i].name), \(calculateAge(birthday: swipeCardData[i].dob))", location: swipeCardData[i].sex.capitalized))
                         }else{
-                            self.cardData.append(SwipeViewData(image: nil, nameDate:"\(swipeCardData[i].name), \(calculateAge(birthday: swipeCardData[i].dob))", location: swipeCardData[i].sex))
+                            self.cardData.append(SwipeViewData(image: nil, nameDate:"\(swipeCardData[i].name), \(calculateAge(birthday: swipeCardData[i].dob))", location: swipeCardData[i].sex.capitalized))
                         }
                     }
                 }

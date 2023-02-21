@@ -10,6 +10,8 @@ import SocketIO
 
 class ChatInboxVC: UIViewController {
 
+    @IBOutlet weak var messageHeight: NSLayoutConstraint!
+    @IBOutlet weak var messageText: UITextView!
     @IBOutlet weak var chatInboxTable: UITableView!
     @IBOutlet weak var typeMsgView: UIView!
     @IBOutlet weak var typeMessage: UITextField!
@@ -26,17 +28,18 @@ class ChatInboxVC: UIViewController {
         super.viewDidLoad()
         loadViews()
         chatInboxTable.keyboardDismissMode = .interactive
-        typeMessage.delegate = self
+        messageText.delegate = self
     }
     //////////////////////
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-            viewModel.setRoom(receiver: otherUserId)
-            viewModel.getChat(roomId: roomId,reloadTable: chatInboxTable)
+        viewModel.setRoom(receiver: otherUserId, reloadTable: chatInboxTable)
+           
        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        sendBtn.backgroundColor = .gray
         viewModel.scrollToBottom(table: chatInboxTable)
     }
     ///
@@ -68,21 +71,11 @@ class ChatInboxVC: UIViewController {
     }
     
     @IBAction func sendMessagge(_ sender: UIButton){
-        if typeMessage.text != ""{
-          
-            let messagePayload: [String:Any] = ["senderId":getUserId(),
-                                                "receiverId":otherUserId,
-                                                "roomId":roomId,
-                                                "content": typeMessage.text ,
-                                                "date":getCurrentDateInString(),
-            ]
-            socket.emit("chat-msg", messagePayload)
-            chatInboxTable.reloadData()
-            viewModel.scrollToBottom(table: chatInboxTable)
-            typeMessage.text = ""
-            
-            
- 
+        
+        if messageText.text != ""{
+            viewModel.sendMessage(receiver: otherUserId, content: messageText.text!, table: chatInboxTable)
+            messageHeight.constant = 40
+            messageText.text = ""
         }
     }
 }

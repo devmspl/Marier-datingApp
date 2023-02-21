@@ -7,6 +7,8 @@
 
 import UIKit
 import PageControls
+import SocketIO
+
 class OtherUserProfileVC: UIViewController {
 
     @IBOutlet weak var name: UILabel!
@@ -52,7 +54,7 @@ class OtherUserProfileVC: UIViewController {
     func loadData(){
         name.text = (viewModel.userData?.name ?? "")+", \(calculateAge(birthday: viewModel.userData?.dob ?? ""))"
         address.text = viewModel.userData?.sex
-        imageCollection.register(UINib(nibName: "ImagesCollectionCell", bundle: nil), forCellWithReuseIdentifier: "ImagesCollectionCell")
+//        imageCollection.register(UINib(nibName: "ImagesCollectionCell", bundle: nil), forCellWithReuseIdentifier: "ImagesCollectionCell")
         interestCollection.register(UINib(nibName: "ChipCollectionCell", bundle: nil), forCellWithReuseIdentifier: "ChipCollectionCell")
         orientationCollection.register(UINib(nibName: "ChipCollectionCell", bundle: nil), forCellWithReuseIdentifier: "ChipCollectionCell")
         galleryCollection.register(UINib(nibName: "ImagesCollectionCell", bundle: nil), forCellWithReuseIdentifier: "ImagesCollectionCell")
@@ -72,4 +74,16 @@ class OtherUserProfileVC: UIViewController {
         self.poptoViewController()
     }
 
+    @IBAction func messageTapped(_ sender: UIButton){
+        let vc = storyBoards.Chat.instantiateViewController(withIdentifier: "ChatInboxVC") as! ChatInboxVC
+        vc.name = viewModel.userData?.name ?? ""
+        vc.otherUserId = viewModel.userData?.id ?? ""
+        socket.emit("join-user", getUserId())
+        if viewModel.userData?.avatar == ""{
+            vc.avatar = (viewModel.userData?.gallery[0]!.image)!
+        }else{
+            vc.avatar = viewModel.userData!.avatar
+        }
+        self.pushVC(controller: vc)
+    }
 }

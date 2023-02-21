@@ -125,7 +125,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="REo-Jf-NHM">
-                                <rect key="frame" x="0.0" y="97" width="390" height="653"/>
+                                <rect key="frame" x="0.0" y="97" width="390" height="651"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="7jh-3Y-2lk" id="XBV-sn-bNc"/>
@@ -138,18 +138,23 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4n-0B-gCR">
                                         <rect key="frame" x="10" y="5" width="273" height="50"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type something...." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D82-Xj-cfV">
-                                                <rect key="frame" x="5" y="0.0" width="268" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jci-AS-XWB">
+                                                <rect key="frame" x="5" y="5" width="263" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="AaJ-RW-cD7"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" name="buttonColor"/>
                                         <constraints>
-                                            <constraint firstItem="D82-Xj-cfV" firstAttribute="leading" secondItem="Z4n-0B-gCR" secondAttribute="leading" constant="5" id="BLo-Ot-zCS"/>
-                                            <constraint firstAttribute="bottom" secondItem="D82-Xj-cfV" secondAttribute="bottom" id="GUu-pN-zyj"/>
-                                            <constraint firstAttribute="trailing" secondItem="D82-Xj-cfV" secondAttribute="trailing" id="U3l-7o-jyc"/>
-                                            <constraint firstItem="D82-Xj-cfV" firstAttribute="top" secondItem="Z4n-0B-gCR" secondAttribute="top" id="uzD-Pu-WYg"/>
+                                            <constraint firstAttribute="bottom" secondItem="jci-AS-XWB" secondAttribute="bottom" constant="5" id="2Sp-Ej-MaX"/>
+                                            <constraint firstItem="jci-AS-XWB" firstAttribute="leading" secondItem="Z4n-0B-gCR" secondAttribute="leading" constant="5" id="6yP-Vh-4Fw"/>
+                                            <constraint firstAttribute="trailing" secondItem="jci-AS-XWB" secondAttribute="trailing" constant="5" id="QoZ-Tl-tX4"/>
+                                            <constraint firstItem="jci-AS-XWB" firstAttribute="top" secondItem="Z4n-0B-gCR" secondAttribute="top" constant="5" id="tMm-Z5-nty"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -160,6 +165,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbt-nL-SrY">
                                         <rect key="frame" x="293" y="5" width="87" height="50"/>
                                         <color key="backgroundColor" name="buttonColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Voo-dI-TcJ"/>
+                                        </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="sendBtn">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -177,13 +185,12 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Qbt-nL-SrY" secondAttribute="trailing" constant="10" id="5iW-Cy-pNZ"/>
-                                    <constraint firstAttribute="height" constant="60" id="8FX-TW-Soh"/>
                                     <constraint firstItem="Z4n-0B-gCR" firstAttribute="width" secondItem="HIn-t0-FYk" secondAttribute="width" multiplier="0.7" id="BWK-Rn-RoJ"/>
-                                    <constraint firstItem="Qbt-nL-SrY" firstAttribute="centerY" secondItem="Z4n-0B-gCR" secondAttribute="centerY" id="LDi-7X-jRx"/>
+                                    <constraint firstItem="Qbt-nL-SrY" firstAttribute="bottom" secondItem="Z4n-0B-gCR" secondAttribute="bottom" id="EaA-Kk-sDR"/>
                                     <constraint firstAttribute="bottom" secondItem="Z4n-0B-gCR" secondAttribute="bottom" constant="5" id="Wby-tY-wuu"/>
                                     <constraint firstItem="Z4n-0B-gCR" firstAttribute="top" secondItem="HIn-t0-FYk" secondAttribute="top" constant="5" id="bEG-FH-n2p"/>
                                     <constraint firstItem="Qbt-nL-SrY" firstAttribute="leading" secondItem="Z4n-0B-gCR" secondAttribute="trailing" constant="10" id="eRC-xM-4L2"/>
-                                    <constraint firstItem="Qbt-nL-SrY" firstAttribute="height" secondItem="Z4n-0B-gCR" secondAttribute="height" id="nFJ-nx-E4g"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="lew-So-KGC"/>
                                     <constraint firstItem="Z4n-0B-gCR" firstAttribute="leading" secondItem="HIn-t0-FYk" secondAttribute="leading" constant="10" id="sJz-Ik-Zeb"/>
                                 </constraints>
                             </view>
@@ -195,8 +202,8 @@
                             <constraint firstItem="COG-Xd-oqS" firstAttribute="leading" secondItem="wcg-BT-C7e" secondAttribute="leading" id="Fi6-be-1sc"/>
                             <constraint firstItem="wcg-BT-C7e" firstAttribute="trailing" secondItem="REo-Jf-NHM" secondAttribute="trailing" id="KAu-hs-tKO"/>
                             <constraint firstItem="wcg-BT-C7e" firstAttribute="trailing" secondItem="COG-Xd-oqS" secondAttribute="trailing" id="SVh-P7-WcR"/>
+                            <constraint firstItem="HIn-t0-FYk" firstAttribute="top" secondItem="REo-Jf-NHM" secondAttribute="bottom" constant="2" id="bZe-2m-BdN"/>
                             <constraint firstItem="REo-Jf-NHM" firstAttribute="leading" secondItem="wcg-BT-C7e" secondAttribute="leading" id="bre-PU-VMG"/>
-                            <constraint firstItem="HIn-t0-FYk" firstAttribute="top" secondItem="REo-Jf-NHM" secondAttribute="bottom" id="kh9-xy-U2i"/>
                             <constraint firstItem="REo-Jf-NHM" firstAttribute="top" secondItem="COG-Xd-oqS" secondAttribute="bottom" id="pY8-c4-5Xq"/>
                             <constraint firstItem="HIn-t0-FYk" firstAttribute="leading" secondItem="wcg-BT-C7e" secondAttribute="leading" id="qx3-qQ-Aeb"/>
                             <constraint firstItem="COG-Xd-oqS" firstAttribute="top" secondItem="wcg-BT-C7e" secondAttribute="top" id="vA3-65-CLn"/>
@@ -205,8 +212,9 @@
                     </view>
                     <connections>
                         <outlet property="chatInboxTable" destination="REo-Jf-NHM" id="fY1-aL-vLy"/>
+                        <outlet property="messageHeight" destination="AaJ-RW-cD7" id="srw-2A-mR9"/>
+                        <outlet property="messageText" destination="jci-AS-XWB" id="W98-RI-9eZ"/>
                         <outlet property="sendBtn" destination="Qbt-nL-SrY" id="n7j-4B-SdB"/>
-                        <outlet property="typeMessage" destination="D82-Xj-cfV" id="vkl-4U-Z7a"/>
                         <outlet property="typeMsgView" destination="Z4n-0B-gCR" id="TN3-EV-DW8"/>
                         <outlet property="userImage" destination="649-IK-xdk" id="hSB-Rk-MV8"/>
                         <outlet property="username" destination="UX6-dS-MR4" id="dHp-1P-jgP"/>

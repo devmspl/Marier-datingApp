@@ -17,7 +17,7 @@ extension AddImagesVC: UICollectionViewDelegate,UICollectionViewDataSource,UICol
         if viewModel.arrayData.count > 0{
             return viewModel.arrayData.count
         }else{
-            return 1
+            return 4
         }
     }
     
@@ -30,7 +30,11 @@ extension AddImagesVC: UICollectionViewDelegate,UICollectionViewDataSource,UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: picCollection.frame.width/2.1, height: picCollection.frame.height/2.1)
+        if viewModel.arrayData.count == 2{
+            return CGSize(width: picCollection.frame.width/2, height: picCollection.frame.height/1.5)
+        }else {
+            return CGSize(width: picCollection.frame.width/2, height: picCollection.frame.height/2)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

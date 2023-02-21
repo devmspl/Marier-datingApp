@@ -18,13 +18,18 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g0V-MY-ave">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="77"/>
+                        <rect key="frame" x="10" y="0.0" width="230" height="77"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="g0V-MY-ave" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Bwl-Bo-Crq"/>
+                <constraint firstItem="g0V-MY-ave" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Bwl-Bo-Crq"/>
                 <constraint firstAttribute="trailing" secondItem="g0V-MY-ave" secondAttribute="trailing" id="e8U-9J-Nag"/>
                 <constraint firstItem="g0V-MY-ave" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lNC-gQ-44u"/>
                 <constraint firstAttribute="bottom" secondItem="g0V-MY-ave" secondAttribute="bottom" id="rUk-qE-Ju1"/>

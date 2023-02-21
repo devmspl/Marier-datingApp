@@ -82,7 +82,7 @@ extension UIView {
         case horizontal
         case vertical
     }
-    
+ ///////////
     func makeDashedBorderLine(color: UIColor, strokeLength: NSNumber, gapLength: NSNumber, width: CGFloat, orientation: dashedOrientation) {
         let path = CGMutablePath()
         let shapeLayer = CAShapeLayer()
@@ -99,7 +99,7 @@ extension UIView {
         shapeLayer.path = path
         layer.addSublayer(shapeLayer)
     }
-    
+/////
     func setBottomCurve(){
         let offset = CGFloat(self.frame.size.height/0.8)
                    let bounds = self.bounds
@@ -114,6 +114,8 @@ extension UIView {
                    maskLayer.path = rectPath.cgPath
                    self.layer.mask = maskLayer
                }
-
+   
 }
+
+
 

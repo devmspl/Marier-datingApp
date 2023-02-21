@@ -861,7 +861,6 @@
                                     <constraint firstAttribute="width" constant="40" id="r3E-JP-gB5"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="backButton"/>
                                 <connections>
                                     <action selector="onBackTap:" destination="9gs-8X-AhW" eventType="touchUpInside" id="dpr-mH-DPy"/>
                                 </connections>
@@ -983,7 +982,6 @@ orientation is</string>
                                     <constraint firstAttribute="width" constant="40" id="urA-sJ-fom"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="backButton"/>
                                 <connections>
                                     <action selector="onBackTap:" destination="11P-SR-MnD" eventType="touchUpInside" id="cKi-HU-11k"/>
                                 </connections>
@@ -1141,7 +1139,6 @@ by adding  to your profile</string>
                                     <constraint firstAttribute="width" constant="40" id="jja-W9-Fgq"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="backButton"/>
                                 <connections>
                                     <action selector="onBackTap:" destination="Drf-E5-QJ5" eventType="touchUpInside" id="CAT-03-KB9"/>
                                 </connections>
@@ -1168,7 +1165,7 @@ by adding  to your profile</string>
                                 <rect key="frame" x="0.0" y="262.66666666666669" width="390" height="547.33333333333326"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEr-fD-gD3">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="410"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="390"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dzs-DK-QKM">
                                                 <rect key="frame" x="20" y="0.0" width="370" height="300"/>
@@ -1243,7 +1240,7 @@ by adding  to your profile</string>
                                                 </connections>
                                             </collectionView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFN-GQ-cd9" customClass="PurpleButton" customModule="Marier" customModuleProvider="target">
-                                                <rect key="frame" x="30" y="329.99999999999994" width="330" height="50"/>
+                                                <rect key="frame" x="30" y="309.99999999999994" width="330" height="50"/>
                                                 <color key="backgroundColor" name="upperGradientColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="PE1-Fd-Qwh"/>
@@ -1261,7 +1258,7 @@ by adding  to your profile</string>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Dzs-DK-QKM" secondAttribute="trailing" id="6DT-H6-N8B"/>
-                                            <constraint firstItem="rFN-GQ-cd9" firstAttribute="top" secondItem="Dzs-DK-QKM" secondAttribute="bottom" constant="30" id="7EN-oi-txT"/>
+                                            <constraint firstItem="rFN-GQ-cd9" firstAttribute="top" secondItem="Dzs-DK-QKM" secondAttribute="bottom" constant="10" id="7EN-oi-txT"/>
                                             <constraint firstAttribute="bottom" secondItem="rFN-GQ-cd9" secondAttribute="bottom" constant="30" id="Ct2-cD-NvV"/>
                                             <constraint firstAttribute="trailing" secondItem="rFN-GQ-cd9" secondAttribute="trailing" constant="30" id="HvV-A0-4OH"/>
                                             <constraint firstItem="Dzs-DK-QKM" firstAttribute="top" secondItem="HEr-fD-gD3" secondAttribute="top" id="LUs-Oe-hSK"/>
