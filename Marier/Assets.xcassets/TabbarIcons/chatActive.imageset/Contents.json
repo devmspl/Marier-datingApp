@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Vector (10).pdf",
+      "filename" : "Group (2).pdf",
       "idiom" : "universal"
     }
   ],
@@ -10,6 +10,7 @@
     "version" : 1
   },
   "properties" : {
+    "localizable" : true,
     "template-rendering-intent" : "original"
   }
 }

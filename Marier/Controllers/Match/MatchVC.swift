@@ -20,8 +20,8 @@ class MatchVC: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         Container().addController(type: "likes", mainController: self, containerView: mainView)
-        searchButton.setTitleColor(UIColor.black, for: .normal)
-        nearbyButton.setTitleColor(UIColor.gray, for: .normal)
+        searchButton.setTitleColor(UIColor(named: "upperGradientColor"), for: .normal)
+        nearbyButton.setTitleColor(UIColor(named: "lowerGradientColor"), for: .normal)
     }
 
     //MARK: - private functions
@@ -30,13 +30,13 @@ class MatchVC: UIViewController {
     }()
     
     @IBAction func searchTapped(_ sender: UIButton){
-        searchButton.setTitleColor(UIColor.black, for: .normal)
-        nearbyButton.setTitleColor(UIColor.gray, for: .normal)
+        searchButton.setTitleColor(UIColor(named: "upperGradientColor"), for: .normal)
+        nearbyButton.setTitleColor(UIColor(named: "lowerGradientColor"), for: .normal)
         Container().addController(type: "likes", mainController: self, containerView: mainView)
     }
     @IBAction func nearbyTapped(_ sender: UIButton){
-        searchButton.setTitleColor(UIColor.gray, for: .normal)
-        nearbyButton.setTitleColor(UIColor.black, for: .normal)
+        searchButton.setTitleColor(UIColor(named: "lowerGradientColor"), for: .normal)
+        nearbyButton.setTitleColor(UIColor(named: "uppersGradientColor"), for: .normal)
         Container().addController(type: "nearby", mainController: self, containerView: mainView)
         
     }

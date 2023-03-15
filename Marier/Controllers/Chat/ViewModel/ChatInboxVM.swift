@@ -12,6 +12,7 @@ class ChatInboxVM: NSObject {
     
     var arrMessage = [getMessageModel]()
     var roomid = ""
+    var optionsArray = ["View Contact","Delete Chat history","Block & report","Archieve","More"]
     //getchart
     func getChat(roomId: String,reloadTable: UITableView){
         

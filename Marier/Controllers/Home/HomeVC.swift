@@ -6,23 +6,24 @@
 //
 
 import UIKit
-import Koloda
 import RangeSeekSlider
 import DropDown
 
+
 class HomeVC: UIViewController{
     
+    @IBOutlet weak var likeView: UIView!
+    @IBOutlet weak var superLike: UIView!
+    @IBOutlet public weak var dislikeView: UIView!
     @IBOutlet weak var segmentCtrl: UISegmentedControl!
     @IBOutlet weak var selectedDistance: UITextField!
     @IBOutlet weak var filterSubView: UIView!
     @IBOutlet var filterView: UIView!
     @IBOutlet weak var swipeView: KolodaView!
     @IBOutlet weak var ageRange: RangeSeekSlider!
-    
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-      
         swipeView.delegate = self
         swipeView.dataSource = self
         segmentCtrl.selectedSegmentIndex = 1
@@ -43,7 +44,20 @@ class HomeVC: UIViewController{
         filterSubView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
         ageRange.delegate = self
     }
-    
+//MARK: - hideViews
+    func hideViews(){
+        dislikeView.isHidden = true
+        likeView.isHidden = true
+        superLike.isHidden = true
+        
+        
+        likeView.tilt(degree: -4.0)
+        dislikeView.tilt(degree: 4.0)
+        
+        dislikeView.setBorder(color: UIColor.systemRed)
+        likeView.setBorder(color: UIColor.systemGreen)
+        superLike.setBorder(color: UIColor.cyan)
+    }
 //MARK: - VIEWMODEL
     internal lazy var viewModel: HomeVM = {
         return HomeVM()
@@ -51,6 +65,7 @@ class HomeVC: UIViewController{
    
     //MARK: - SET DATA
     func setData(){
+        hideViews()
         viewModel.getMatchList { [self] isSuccess, error in
             if isSuccess{
                 viewModel.dataForCard()

@@ -39,10 +39,12 @@ class ApiManager
                     if status == 200{
                         completion(json,status!,true,"")
                     }else{
-                        let json = try! JSONSerialization.jsonObject(with: data!,options: .mutableContainers) as! [String:Any]
-                        let errorMessage = json["message"] as! String
+                        let json = try? JSONSerialization.jsonObject(with: data!,options: .mutableContainers) as? [String:Any]
+                        let errorMessage = json?["message"] as! String
                         completion(nil,status!,false,errorMessage)
                     }
+                }catch{
+                    print(error.localizedDescription)
                 }
                 case .failure(let error):do{
                     KRProgressHUD.dismiss()
@@ -69,6 +71,7 @@ class ApiManager
                     
                 case .success(let data):do{
                     KRProgressHUD.dismiss()
+                    print(requestUrl)
                     let status = response.response?.statusCode
                     guard let json = try? JSONSerialization.jsonObject(with: data!,options: .mutableContainers) as? [String:Any] else {return}
                     if status == 200{

@@ -11,7 +11,6 @@ struct SearchDataModel: Codable {
     let id: String
     let likeBy: LikeBy
     let likeTo: String
-
     let isLiked, isDeleted: Bool
 
     

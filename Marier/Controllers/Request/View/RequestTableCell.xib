@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="RequestTableCell" customModule="Marier" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="349" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="349" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faW-XX-9Pj">
+                        <rect key="frame" x="10" y="5" width="329" height="50"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="GTf-bq-sr8">
+                                <rect key="frame" x="5" y="5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="NHE-hm-bsf"/>
+                                    <constraint firstAttribute="width" constant="40" id="eQv-wo-IY1"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alexa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxt-qe-DCT">
+                                <rect key="frame" x="55" y="16" width="37.333333333333343" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1s-gT-dxb">
+                                <rect key="frame" x="304" y="14" width="20" height="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="reqAcccept"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBp-Bw-5GW">
+                                <rect key="frame" x="279" y="14" width="20" height="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="reqReject"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="U1s-gT-dxb" secondAttribute="trailing" constant="5" id="2WZ-Dd-hY2"/>
+                            <constraint firstItem="GTf-bq-sr8" firstAttribute="centerY" secondItem="faW-XX-9Pj" secondAttribute="centerY" id="8sM-aG-gij"/>
+                            <constraint firstItem="Dxt-qe-DCT" firstAttribute="centerY" secondItem="GTf-bq-sr8" secondAttribute="centerY" id="BmM-sK-QZ8"/>
+                            <constraint firstItem="U1s-gT-dxb" firstAttribute="centerY" secondItem="faW-XX-9Pj" secondAttribute="centerY" id="eO3-PQ-goz"/>
+                            <constraint firstItem="U1s-gT-dxb" firstAttribute="leading" secondItem="aBp-Bw-5GW" secondAttribute="trailing" constant="5" id="hV0-BP-E6F"/>
+                            <constraint firstItem="Dxt-qe-DCT" firstAttribute="leading" secondItem="GTf-bq-sr8" secondAttribute="trailing" constant="10" id="mNL-Zk-eYX"/>
+                            <constraint firstItem="GTf-bq-sr8" firstAttribute="leading" secondItem="faW-XX-9Pj" secondAttribute="leading" constant="5" id="pvj-oo-MZa"/>
+                            <constraint firstItem="aBp-Bw-5GW" firstAttribute="centerY" secondItem="faW-XX-9Pj" secondAttribute="centerY" id="qCh-Nl-f5l"/>
+                            <constraint firstAttribute="height" constant="50" id="qZ0-f2-igp"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="faW-XX-9Pj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="ADK-Jw-4gu"/>
+                    <constraint firstAttribute="bottom" secondItem="faW-XX-9Pj" secondAttribute="bottom" id="BYq-Su-yci"/>
+                    <constraint firstItem="faW-XX-9Pj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="god-PN-UoR"/>
+                    <constraint firstAttribute="trailing" secondItem="faW-XX-9Pj" secondAttribute="trailing" constant="10" id="hJC-UC-DFk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="74.045801526717554" y="25.35211267605634"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="profileImage" width="57" height="57"/>
+        <image name="reqAcccept" width="20" height="22"/>
+        <image name="reqReject" width="20" height="20"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

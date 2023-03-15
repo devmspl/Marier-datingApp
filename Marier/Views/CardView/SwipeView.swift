@@ -8,9 +8,7 @@
 import UIKit
 
 class SwipeView: UIView {
-
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
-
 }

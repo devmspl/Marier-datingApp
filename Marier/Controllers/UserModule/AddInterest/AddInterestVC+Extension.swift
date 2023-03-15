@@ -15,12 +15,13 @@ extension AddInterestVC: UICollectionViewDelegate,UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = chipCollection.dequeueReusableCell(withReuseIdentifier: "ChipCollectionCell", for: indexPath) as! ChipCollectionCell
-        cell.chiptext.text = viewModel.interestArray[indexPath.item].type
+        cell.config(cellData: viewModel.interestArray[indexPath.row])
+        
         if #available(iOS 16.0, *) {
             if viewModel.selectedIndex.contains(indexPath.item){
                 cell.chipView.backgroundColor = UIColor(named: "lowerGradientColor")
             }else{
-                cell.chipView.backgroundColor = UIColor(named: "buttonColor")
+                cell.chipView.backgroundColor = UIColor.white
             }
         } else {
         }

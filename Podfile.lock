@@ -7,8 +7,6 @@ PODS:
   - DMSwipeCards (1.0.3)
   - DropDown (2.3.13)
   - IQKeyboardManagerSwift (6.5.10)
-  - Koloda (5.0.1):
-    - pop (~> 1.0)
   - KRActivityIndicatorView (3.0.7)
   - KRProgressHUD (3.4.7):
     - KRActivityIndicatorView (= 3.0.7)
@@ -110,12 +108,12 @@ DEPENDENCIES:
   - DMSwipeCards
   - DropDown
   - IQKeyboardManagerSwift
-  - Koloda
   - KRProgressHUD
   - MaterialComponents/Chips
   - OpalImagePicker
   - OTPTextField
   - PageControls
+  - pop
   - RangeSeekSlider
   - Socket.IO-Client-Swift
   - SwiftyJSON
@@ -130,7 +128,6 @@ SPEC REPOS:
     - DMSwipeCards
     - DropDown
     - IQKeyboardManagerSwift
-    - Koloda
     - KRActivityIndicatorView
     - KRProgressHUD
     - MaterialComponents
@@ -154,7 +151,6 @@ SPEC CHECKSUMS:
   DMSwipeCards: 0f2488120c13eb73366f01e87d1423495cde8ed4
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
-  Koloda: d07b9199a383abc5898b62aa945a599f5e7c0c4b
   KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
   KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
   MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
@@ -170,6 +166,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 5471b4cc24f8610dd1917502bc050f22bc52eae4
+PODFILE CHECKSUM: 552aa639d209b15c1396c17a8b5b28542da31059
 
 COCOAPODS: 1.11.3

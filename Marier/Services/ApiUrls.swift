@@ -7,7 +7,7 @@
 
 import Foundation
 
-public var baseUrl = "http://18.189.74.89:9001/api/v1/"
+public var baseUrl = "https://marier.one:9001/api/v1/"
 
 struct ApiUrls{
 

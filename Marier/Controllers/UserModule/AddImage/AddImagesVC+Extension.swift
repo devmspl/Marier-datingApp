@@ -58,6 +58,7 @@ extension AddImagesVC: UICollectionViewDelegate,UICollectionViewDataSource,UICol
     }
     func imagePickerDidCancel(_ picker: OpalImagePickerController) {
         self.picker.dismiss(animated: true)
+        
     }
     
 }

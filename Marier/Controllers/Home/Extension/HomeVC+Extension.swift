@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Koloda
 import AlamofireImage
 import KRProgressHUD
 import RangeSeekSlider
@@ -21,7 +20,7 @@ extension HomeVC: KolodaViewDelegate,KolodaViewDataSource{
             swipeView.reloadData()
         }
     }
-    func koloda(_ koloda: Koloda.KolodaView, viewForCardAt index: Int) -> UIView {
+    func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         let nibView = Bundle.main.loadNibNamed("SwipeView", owner: self, options: nil)?[0] as! SwipeView
         if viewModel.cardData[index].image != nil{
             nibView.userImage.af.setImage(withURL: viewModel.cardData[index].image!)
@@ -33,7 +32,7 @@ extension HomeVC: KolodaViewDelegate,KolodaViewDataSource{
         return nibView
     }
     
-    func kolodaNumberOfCards(_ koloda: Koloda.KolodaView) -> Int {
+    func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
         viewModel.swipeCardData.count
     }
     
@@ -77,9 +76,32 @@ extension HomeVC: KolodaViewDelegate,KolodaViewDataSource{
         vc.id = viewModel.swipeCardData[index].id
         self.pushVC(controller: vc)
     }
+    func koloda(_ koloda: KolodaView, draggedCardWithPercentage finishPercentage: CGFloat, in direction: SwipeResultDirection) {
+        if finishPercentage != 100.0{
+            if direction == .right{
+                likeView.isHidden = false
+                dislikeView.isHidden = true
+                superLike.isHidden = true
+            }else if direction == .left{
+                dislikeView.isHidden = false
+                likeView.isHidden = true
+                superLike.isHidden = true
+            }else if direction == .up{
+                likeView.isHidden = true
+                dislikeView.isHidden = true
+                superLike.isHidden = false
+            }
+        }else{
+            self.hideViews()
+        }
+       
+    }
+    func kolodaDidResetCard(_ koloda: KolodaView) {
+        self.hideViews()
+    }
+   
     
 }
-
 //MARK: - range seek
 extension HomeVC: RangeSeekSliderDelegate{
     func rangeSeekSlider(_ slider: RangeSeekSlider, didChange minValue: CGFloat, maxValue: CGFloat) {
@@ -102,3 +124,5 @@ extension HomeVC: RangeSeekSliderDelegate{
         return "\(stringForMaxValue)"
     }
 }
+
+
