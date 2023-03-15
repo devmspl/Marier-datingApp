@@ -49,6 +49,49 @@ class PurpleButton: UIButton{
     }
     
 }
+//MARK: -Gray borderButton
+class GrayButton: UIButton{
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    private func setup() {
+        self.layer.cornerRadius = 25
+        self.layer.masksToBounds = true
+        self.layer.borderColor = UIColor.init(named: "buttonColor")?.cgColor
+        self.layer.borderWidth = 1
+        self.setTitleColor(UIColor.black, for: .normal)
+        self.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+}
+//MARK: - gradientButton
+class GradientButton: UIButton{
+    
+    override func layoutSubviews() {
+           super.layoutSubviews()
+        self.setTitleColor(.white, for: .normal)
+           gradientLayer.frame = bounds
+       }
+       private lazy var gradientLayer: CAGradientLayer = {
+           let leftColor = UIColor(red: 118/255, green: 45/255, blue: 196/255, alpha: 1)
+           let rightColor = UIColor(red: 118/255, green: 45/255, blue: 196/255, alpha: 0.56)
+           let l = CAGradientLayer()
+           l.frame = self.bounds
+           l.colors = [leftColor.cgColor, rightColor.cgColor]
+           l.startPoint = CGPoint(x: 0, y: 0.5)
+           l.endPoint = CGPoint(x: 1, y: 0.5)
+           l.cornerRadius = 25
+           layer.insertSublayer(l, at: 0)
+           return l
+       }()
+}
 
 //MARK: - roundView class//////
 class RoundView: UIView{
@@ -84,7 +127,7 @@ class GrayBorderView:UIView{
         self.layer.masksToBounds = true
         self.layer.borderColor = UIColor(named: "buttonColor")?.cgColor
         self.layer.borderWidth = 1
-//        self.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
 }
 //MARK: - dashed view////////////
@@ -229,6 +272,22 @@ extension DispatchQueue {
                 })
             }
         }
+    }
+
+}
+
+
+class IntrinsicTableView: UITableView {
+
+    override var contentSize:CGSize {
+        didSet {
+            self.invalidateIntrinsicContentSize()
+        }
+    }
+
+    override var intrinsicContentSize: CGSize {
+        self.layoutIfNeeded()
+        return CGSize(width: UIView.noIntrinsicMetric, height: contentSize.height)
     }
 
 }

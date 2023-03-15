@@ -40,7 +40,7 @@ class ChatTableCell: UITableViewCell {
             if let image = data.user?.avatar as? String{
             userImage.setImage(imageStr: image)
             }else{
-//                userImage.setImage(imageStr: data.)
+                userImage.image = UIImage(named: "profileActive")
             }
        
     }
