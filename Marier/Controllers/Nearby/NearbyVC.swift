@@ -16,6 +16,7 @@ class NearbyVC: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        self.presentSubscriptionVC()
     }
     //MARK: - private functions
     private lazy var viewModel: NearbyVM = {

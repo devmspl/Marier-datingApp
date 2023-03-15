@@ -11,20 +11,24 @@ class BottomBar: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        curvedView()
         // Do any additional setup after loading the view.
     }
-    
-   
-    
-    /*
-    // MARK: - Navigation
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        curvedView()
+        socket.connect()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
-
+   
+    func curvedView(){
+        self.tabBar.layer.shadowRadius = 5
+        self.tabBar.layer.shadowColor = UIColor.lightGray.cgColor
+        self.tabBar.layer.shadowOffset = CGSize(width: 0.2, height: 0.5)
+        self.tabBar.layer.shadowOpacity = 1
+        self.selectedIndex = 0
+        self.tabBar.layer.cornerRadius = 20
+        self.tabBar.layer.masksToBounds = true
+        self.tabBar.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
 }

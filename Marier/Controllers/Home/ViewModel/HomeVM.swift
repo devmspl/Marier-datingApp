@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Koloda
 import AlamofireImage
 import DropDown
 

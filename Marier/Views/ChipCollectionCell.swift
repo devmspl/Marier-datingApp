@@ -15,13 +15,11 @@ class ChipCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func config(cellData: [OrientationAndInterestDataModel?]){
-        chipView.layer.cornerRadius = 15
+    func config(cellData: OrientationAndInterestDataModel){
+        chipView.layer.cornerRadius = 12
         chipView.layer.borderColor = UIColor.gray.cgColor
         chipView.layer.borderWidth = 1
-        for i in 0...cellData.count-1{
-            chiptext.text = cellData[i]?.type
-        }
+            chiptext.text = cellData.type
     }
 
 }

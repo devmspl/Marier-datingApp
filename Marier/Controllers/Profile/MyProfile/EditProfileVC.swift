@@ -60,7 +60,7 @@ class EditProfileVC: UIViewController {
                                              distance: userData?.setting?.distance ?? 10)
         return editDataModel
     }
-    
+//
     func getData(){
         name.text = userData?.name
         dob.text = getDob(aDate: userData?.dob ?? "")

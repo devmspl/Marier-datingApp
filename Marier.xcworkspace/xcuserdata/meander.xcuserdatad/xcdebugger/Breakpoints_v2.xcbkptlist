@@ -119,64 +119,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "98463136-CE30-4279-8F25-37942AA1FEE7"
+            uuid = "2706FCA6-9372-43C9-9B93-A12098912168"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Marier/Controllers/Chat/ViewModel/AllChatVM.swift"
+            filePath = "Marier/Services/ApiManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "connectSocket(table:)"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "hitApis(requestUrl:httpMethod:requestBody:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E2245335-68B3-4413-916A-7468B87C51B6"
+            uuid = "9D023186-D5BC-4FB0-AB32-BA779844F4B1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Marier/Controllers/Chat/ViewModel/AllChatVM.swift"
+            filePath = "Marier/Controllers/Chat/ChatInbox/ChatInboxVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "connectSocket(table:)"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "optionTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "267C51B5-9713-4FFA-BB2A-BF752BECE7D0"
+            uuid = "AF93853C-B740-4E9C-B9F4-D2D4CBC69FE9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Marier/Controllers/Chat/ViewModel/AllChatVM.swift"
+            filePath = "Marier/Views/ChatOptions/ChatOptionCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "connectSocket(table:)"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "setSelected(_:animated:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8A9AEB58-365E-42CE-82E2-E4F7BE523112"
+            uuid = "8D9D6A49-F1AD-4E6B-9AAC-8566C64FDF14"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Marier/Controllers/Chat/ViewModel/AllChatVM.swift"
+            filePath = "Marier/Views/ChatOptions/ChatOptionCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "connectSocket(table:)"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "awakeFromNib()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
