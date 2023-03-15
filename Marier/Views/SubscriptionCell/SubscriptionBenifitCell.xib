@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SubscriptionBenifitCell" customModule="Marier" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="312" height="143"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="312" height="143"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMO-rB-FIw">
+                        <rect key="frame" x="0.0" y="0.0" width="312" height="143"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Marier Gold" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpa-rN-Zc3">
+                                <rect key="frame" x="100.66666666666666" y="5" width="110.66666666666666" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="textColor" name="upperGradientColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="PtY-ob-j3u">
+                                <rect key="frame" x="131" y="28" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="VSP-2X-wVl"/>
+                                    <constraint firstAttribute="height" constant="50" id="gjN-CK-gES"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Out of super likes!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDH-ln-rep">
+                                <rect key="frame" x="93.666666666666686" y="83" width="125" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Get 5 Free Super Likes Every Week &amp; more" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ng-o6-bSW">
+                                <rect key="frame" x="5" y="124" width="302" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jpa-rN-Zc3" firstAttribute="centerX" secondItem="TMO-rB-FIw" secondAttribute="centerX" id="0Ef-JL-2Hj"/>
+                            <constraint firstItem="HDH-ln-rep" firstAttribute="top" secondItem="PtY-ob-j3u" secondAttribute="bottom" constant="5" id="28f-2e-jU3"/>
+                            <constraint firstItem="4Ng-o6-bSW" firstAttribute="leading" secondItem="TMO-rB-FIw" secondAttribute="leading" constant="5" id="L8f-BF-dme"/>
+                            <constraint firstAttribute="bottom" secondItem="4Ng-o6-bSW" secondAttribute="bottom" constant="5" id="MfV-MC-dyV"/>
+                            <constraint firstItem="PtY-ob-j3u" firstAttribute="centerX" secondItem="TMO-rB-FIw" secondAttribute="centerX" id="X07-Yi-naP"/>
+                            <constraint firstItem="PtY-ob-j3u" firstAttribute="top" secondItem="jpa-rN-Zc3" secondAttribute="bottom" constant="5" id="ZYW-HO-vI8"/>
+                            <constraint firstItem="jpa-rN-Zc3" firstAttribute="top" secondItem="TMO-rB-FIw" secondAttribute="top" constant="5" id="cBU-zI-vzl"/>
+                            <constraint firstAttribute="trailing" secondItem="4Ng-o6-bSW" secondAttribute="trailing" constant="5" id="fxu-Fl-AsM"/>
+                            <constraint firstItem="4Ng-o6-bSW" firstAttribute="centerX" secondItem="TMO-rB-FIw" secondAttribute="centerX" id="gej-i1-CZh"/>
+                            <constraint firstItem="4Ng-o6-bSW" firstAttribute="top" secondItem="HDH-ln-rep" secondAttribute="bottom" constant="5" id="pmx-lW-g7M"/>
+                            <constraint firstItem="HDH-ln-rep" firstAttribute="centerX" secondItem="TMO-rB-FIw" secondAttribute="centerX" id="swc-Uj-afU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="TMO-rB-FIw" secondAttribute="trailing" id="2fr-10-g6s"/>
+                <constraint firstAttribute="bottom" secondItem="TMO-rB-FIw" secondAttribute="bottom" id="G6m-cJ-gkP"/>
+                <constraint firstItem="TMO-rB-FIw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Rom-ZY-GvJ"/>
+                <constraint firstItem="TMO-rB-FIw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ile-ME-eIO"/>
+            </constraints>
+            <size key="customSize" width="312" height="143"/>
+            <connections>
+                <outlet property="benifitDescription" destination="4Ng-o6-bSW" id="uSJ-fa-dZB"/>
+                <outlet property="benifitTitle" destination="HDH-ln-rep" id="Fl5-sS-Qsg"/>
+                <outlet property="cellImage" destination="PtY-ob-j3u" id="7PF-fa-wRk"/>
+                <outlet property="heading" destination="jpa-rN-Zc3" id="Nhu-d9-6Yg"/>
+            </connections>
+            <point key="canvasLocation" x="207.63358778625954" y="51.760563380281695"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="3" width="143" height="148"/>
+        <namedColor name="upperGradientColor">
+            <color red="0.46299999952316284" green="0.17599999904632568" blue="0.76899999380111694" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

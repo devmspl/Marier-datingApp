@@ -22,7 +22,7 @@
                         <rect key="frame" x="10" y="3" width="185" height="85"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvG-F4-TDw">
-                                <rect key="frame" x="2" y="32" width="181" height="21"/>
+                                <rect key="frame" x="10" y="3" width="165" height="79"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -32,8 +32,10 @@
                         <constraints>
                             <constraint firstItem="lvG-F4-TDw" firstAttribute="centerY" secondItem="Qax-GR-iV3" secondAttribute="centerY" id="5wb-tO-oFg"/>
                             <constraint firstItem="lvG-F4-TDw" firstAttribute="centerX" secondItem="Qax-GR-iV3" secondAttribute="centerX" id="JwT-ff-lUr"/>
-                            <constraint firstAttribute="trailing" secondItem="lvG-F4-TDw" secondAttribute="trailing" constant="2" id="Xbj-RB-u0e"/>
-                            <constraint firstItem="lvG-F4-TDw" firstAttribute="leading" secondItem="Qax-GR-iV3" secondAttribute="leading" constant="2" id="ySg-26-ICa"/>
+                            <constraint firstItem="lvG-F4-TDw" firstAttribute="top" secondItem="Qax-GR-iV3" secondAttribute="top" constant="3" id="MX9-ks-FQV"/>
+                            <constraint firstItem="lvG-F4-TDw" firstAttribute="leading" secondItem="Qax-GR-iV3" secondAttribute="leading" constant="10" id="Xtw-hF-lLb"/>
+                            <constraint firstAttribute="bottom" secondItem="lvG-F4-TDw" secondAttribute="bottom" constant="3" id="s1r-NA-t6e"/>
+                            <constraint firstAttribute="trailing" secondItem="lvG-F4-TDw" secondAttribute="trailing" constant="10" id="wyk-bV-alv"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

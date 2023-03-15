@@ -33,5 +33,12 @@
 	<string>Please allow camera permission to upload profile images and gallery images to user profile</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Please allow camera permission to upload profile images and gallery images to user profile</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>MicrophoneAccess</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

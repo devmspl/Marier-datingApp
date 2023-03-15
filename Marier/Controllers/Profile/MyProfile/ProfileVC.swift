@@ -78,6 +78,12 @@ class ProfileVC: BaseClass {
 
     }
     
+    
+    @IBAction func settingTapped(_ sender: UIButton){
+        let vc = storyBoards.Profile.instantiateViewController(withIdentifier: "PrivacyVC") as! PrivacyVC
+        self.pushVC(controller: vc)
+    }
+    
     @IBAction func deleteAccountTapped(_ sender: Any) {
     }
     
@@ -89,7 +95,8 @@ class ProfileVC: BaseClass {
     }
     
     @IBAction func changePlanTapped(_ sender: Any) {
-        
+        let vc = storyBoards.Profile.instantiateViewController(withIdentifier: "PremiumVC") as! PremiumVC
+        self.pushVC(controller: vc)
     }
     
     @IBAction func editTapped(_ sender: UIButton){

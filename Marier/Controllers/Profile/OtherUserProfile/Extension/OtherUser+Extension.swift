@@ -26,11 +26,11 @@ extension OtherUserProfileVC: UICollectionViewDelegate,UICollectionViewDataSourc
             return cell
         }else if collectionView == interestCollection{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChipCollectionCell", for: indexPath) as! ChipCollectionCell
-            cell.config(cellData: viewModel.userData!.interests)
+            cell.config(cellData: viewModel.userData!.interests[indexPath.row]!)
             return cell
         }else if collectionView == orientationCollection{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChipCollectionCell", for: indexPath) as! ChipCollectionCell
-            cell.config(cellData: viewModel.userData!.sexualOrientations)
+            cell.config(cellData: viewModel.userData!.sexualOrientations[indexPath.row]!)
             return cell
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImagesCollectionCell", for: indexPath) as! ImagesCollectionCell

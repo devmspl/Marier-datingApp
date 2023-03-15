@@ -16,7 +16,6 @@ target 'Marier' do
 	pod 'KRProgressHUD'
 	pod 'DropDown'
 	pod 'SwiftyJSON'
-	pod 'Koloda'
 	pod 'DMSwipeCards'
 	pod 'RangeSeekSlider'
 	pod 'IQKeyboardManagerSwift'
@@ -25,4 +24,5 @@ target 'Marier' do
 	pod 'PageControls'
 	pod 'Socket.IO-Client-Swift'
 	pod 'ADCountryPicker'
+	pod 'pop'
 end

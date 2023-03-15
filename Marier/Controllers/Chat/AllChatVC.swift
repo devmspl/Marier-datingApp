@@ -9,6 +9,7 @@ import UIKit
 
 class AllChatVC: UIViewController {
 
+    @IBOutlet weak var chatStatus: UIView!
     @IBOutlet weak var emptyInbox: UIImageView!
     @IBOutlet weak var chatTable: UITableView!
     
@@ -17,6 +18,8 @@ class AllChatVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+       
+       
 
     // Do any additional setup after loading the view.
     }
@@ -34,6 +37,12 @@ class AllChatVC: UIViewController {
     func loadData(){
       
         chatTable.register(UINib(nibName: "chatTableCell", bundle: nil), forCellReuseIdentifier: "ChatTableCell")
+        //
+        if viewModel.chatData.count == 0{
+            chatTable.isHidden = true
+        }else{
+            chatTable.isHidden = false
+        }
     }
 
 }
